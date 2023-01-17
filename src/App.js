@@ -1,13 +1,14 @@
+import { Box } from '@chakra-ui/react';
 import './App.css';
 import Navbar from './Components/Navbar';
 import MainRouter from './Pages/MainRouter';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
+    <Box className="App">
+      {/* <Navbar/> */}
       <MainRouter/>
-    </div>
+    </Box>
   );
 }
 
