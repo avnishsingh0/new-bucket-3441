@@ -1,13 +1,13 @@
 import React from 'react'
-import { Container, Heading } from '@chakra-ui/react'
+import { Container} from '@chakra-ui/react'
 import { Flex, Spacer } from '@chakra-ui/react'
 import { Box,Image } from '@chakra-ui/react'
 import { StackDivider, VStack } from '@chakra-ui/react'
 import { SimpleGrid } from '@chakra-ui/react'
 import { Select } from '@chakra-ui/react'
 import { Input } from '@chakra-ui/react'
-import { Grid, GridItem } from '@chakra-ui/react'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+
+import { Button } from '@chakra-ui/react'
 import {Text} from '@chakra-ui/react'
 
 export const SinglePage = () => {
@@ -16,7 +16,7 @@ export const SinglePage = () => {
         const property = {
           imageUrl: 'https://cdn.caratlane.com/media/catalog/product/J/R/JR07340-1RP9OO_1_lar.jpg',
           imageAlt: 'Rear view of modern home with pool',
-          
+          imageUrl2:'https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR03126-WGP900_13_pdtouch.png',
         }
 
 
@@ -114,7 +114,7 @@ export const SinglePage = () => {
 
             </Box>
                
-               
+
                                 
             </Box>
             <Box h='200px' >
@@ -164,6 +164,68 @@ export const SinglePage = () => {
         </Flex>
         
         
+        </Container>
+        <Container  h="450px" maxW="1100px" >
+            <Text fontSize="25px" mb="15px">The Cartlane Touch :</Text>
+        <SimpleGrid columns={2} spacing={9}>
+                <Box   height='380px' w="450px">
+                    <Image  w="450px" h="380" src={property.imageUrl2} alt={property.imageAlt} ></Image>
+                </Box>
+                <Box   height='380px'>
+                <VStack
+                        divider={<StackDivider borderColor='gray.200' />}
+                        spacing={2}
+                        align='stretch'
+                        >
+                        <Box h='90px'  >
+                        <SimpleGrid columns={6}   >
+                            <Box h="70px" padding="9px" w="70px" borderRadius="70px" border="1px solid grey">
+                                <Box h="50px" w="50px" borderRadius="50px" padding="3" bg="rgb(35,21,53)" color="white" border="1px solid black">
+                                    <Text>1</Text>
+                                </Box>
+                                
+                            </Box>
+                           
+                            <Box  h="90px" w="350px" >
+                                <Text fontSize="20px">The Inspiration</Text>
+                                <Text fontSize="15px">This Diamond ring is carefully crafted to insure your beautiful jewellery is always protected. </Text>
+                            </Box>
+                        </SimpleGrid>
+                            
+                        </Box>
+                        <Box h='100px'  >
+                        <SimpleGrid columns={6}   >
+                            <Box  padding="9px" h="70px" w="70px" borderRadius="70px" border="1px solid grey">
+                            <Box h="50px" w="50px"  bg="rgb(35,21,53)" color="white" borderRadius="50px" padding="4"  border="1px solid black">
+                                <Text margin="auto">2</Text>
+                            </Box>
+                            </Box>
+                           
+                            <Box  h="100px" w="350px" >
+                                <Text fontSize="20px">The Design Story</Text>
+                                <Text fontSize="15px">Go solo with this ring on your finger, or throw a few more in and stack up. There are no shortage of pretty rings for you. :)</Text>
+                            </Box>
+                        </SimpleGrid>
+                        </Box>
+                        <Box h='100px'  >
+                        <SimpleGrid columns={6}   >
+                            <Box h="70px" padding="9px" w="70px" borderRadius="70px" border="1px solid grey">
+                            <Box h="50px" w="50px" padding="3" borderRadius="50px" border="1px solid black" bg="rgb(35,21,53)" color="white">
+                                <Text>3</Text>
+                            </Box>
+                            </Box>
+                           
+                            <Box  h="100px" w="350px" >
+                                <Text fontSize="20px">The Style Element</Text>
+                                <Text fontSize="15px">This diamond ring isn't fussy, it goes with everything you ever pair it with. Be it your plain white tee, or your long dress with frills.</Text>
+                            </Box>
+                        </SimpleGrid>
+                        </Box>
+                        </VStack>
+                </Box>
+                
+        </SimpleGrid>
+
         </Container>
      
     </div>
