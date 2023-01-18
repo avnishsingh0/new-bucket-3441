@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import AdminHome from "../Admin/AdminHome";
+// import Ahome from "../Admin/Ahome";
 import Cart from "./Cart";
 import Checkout from "./Checkout";
 import Home from "./Home";
@@ -17,8 +19,10 @@ const MainRouter = () => {
       <Route path="/checkout" element={<Checkout />} />;
       <Route path="/jawellary" element={<Jawellary />} />;
       <Route path="/login" element={<Login />} />;
+      {/* <Route path="/admin" element={< Ahome/>} />; */}
       <Route path="/SingleProduct/:id" element={<SingleProduct />} />;
       <Route path="*" element={<div>Page Not Found</div>} />
+      <Route path='adminpanel' element={<AdminHome/>}/>
     </Routes>
   );
 };
