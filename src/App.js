@@ -6,7 +6,7 @@ import MainRouter from './Pages/MainRouter';
 function App() {
   return (
     <Box className="App">
-      {/* <Navbar/> */}
+      <Navbar/>
       <MainRouter/>
     </Box>
   );
