@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import {NavLink} from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 import {
   IconButton,
   Avatar,
@@ -16,7 +16,7 @@ import {
   Text,
   useDisclosure,
   BoxProps,
-  FlexProps,  
+  FlexProps,
   Menu,
   MenuButton,
   MenuDivider,
@@ -35,25 +35,19 @@ import {
 } from "react-icons/fi";
 import { IconType } from "react-icons";
 import { ReactText } from "react";
-
-// interface LinkItemProps {
-//   name: string;
-//   icon: IconType;
-// }
 const LinkItems = [
-    { name: 'Home', icon: FiHome ,links:"/adminpanel" },
-    { name: 'Trending', icon: FiTrendingUp,links:"/adminpanel/blog" },
-    { name: 'Explore', icon: FiCompass, links:"/logis" },
-    { name: 'Favourites', icon: FiStar, links:"/logis" },
-    { name: 'Settings', icon: FiSettings, links:"/logis" },
-  ];
+  { name: "Dashboard", icon: FiHome, links: "/adminpanel" },
+  { name: "Packages", icon: FiTrendingUp, links: "/adminpanel/blog" },
+  { name: "Customers", icon: FiCompass, links: "/logis" },
+  { name: "Product", icon: FiStar, links: "/logis" },
+  { name: "Account", icon: FiSettings, links: "/logis" },
+];
 
-export default function SidebarWithHeader({
-  children
-}) {
+export default function SidebarWithHeader({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+console.log(children);
   return (
-    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box >
       <SidebarContent
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
@@ -71,11 +65,7 @@ export default function SidebarWithHeader({
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
-      {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        {children}
-      </Box>
     </Box>
   );
 }
@@ -94,23 +84,26 @@ const SidebarContent = ({ onClose, ...rest }) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo    
+          Logo
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((item,i) => (
+      {LinkItems.map((item, i) => (
         <NavItem key={item.name} icon={item.icon} link={item.links}>
           {item.name}
         </NavItem>
-        
       ))}
     </Box>
   );
 };
 
-const NavItem = ({ icon, children,link ,...rest }) => {
+const NavItem = ({ icon, children, link, ...rest }) => {
   return (
-    <NavLink to={link} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <NavLink
+      to={link}
+      style={{ textDecoration: "none" }}
+      _focus={{ boxShadow: "none" }}
+    >
       <Flex
         align="center"
         p="4"
@@ -136,13 +129,9 @@ const NavItem = ({ icon, children,link ,...rest }) => {
         )}
         {children}
       </Flex>
-      </NavLink>
+    </NavLink>
   );
 };
-
-// interface MobileProps extends FlexProps {
-//   onOpen: () => void;
-// }
 const MobileNav = ({ onOpen, ...rest }) => {
   return (
     <Flex
@@ -191,7 +180,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                 <Avatar
                   size={"sm"}
                   src={
-                    "C:\Users\hp\Desktop\CARATALNE\new-bucket-3441\src\assets\Img\avtar.jpg"
+                    "C:UsershpDesktopCARATALNE\new-bucket-3441srcassetsImgavtar.jpg"
                   }
                 />
                 <VStack
