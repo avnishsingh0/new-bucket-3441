@@ -5,8 +5,9 @@ import MainRouter from './Pages/MainRouter';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <MainRouter/>
+      <Navbar />
+
+      <MainRouter />
     </div>
   );
 }
