@@ -1,4 +1,4 @@
-import { Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Image, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import Carousel from "../Components/Carosel";
 import CallToActionWithVideo from "../Components/Des";

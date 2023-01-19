@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import {NavLink} from 'react-router-dom'
 import {
   IconButton,
   Avatar,
@@ -15,7 +16,7 @@ import {
   Text,
   useDisclosure,
   BoxProps,
-  FlexProps,
+  FlexProps,  
   Menu,
   MenuButton,
   MenuDivider,
@@ -40,11 +41,11 @@ import { ReactText } from "react";
 //   icon: IconType;
 // }
 const LinkItems = [
-    { name: 'Home', icon: FiHome },
-    { name: 'Trending', icon: FiTrendingUp },
-    { name: 'Explore', icon: FiCompass },
-    { name: 'Favourites', icon: FiStar },
-    { name: 'Settings', icon: FiSettings },
+    { name: 'Home', icon: FiHome ,links:"/adminpanel" },
+    { name: 'Trending', icon: FiTrendingUp,links:"/adminpanel/blog" },
+    { name: 'Explore', icon: FiCompass, links:"/logis" },
+    { name: 'Favourites', icon: FiStar, links:"/logis" },
+    { name: 'Settings', icon: FiSettings, links:"/logis" },
   ];
 
 export default function SidebarWithHeader({
@@ -79,10 +80,6 @@ export default function SidebarWithHeader({
   );
 }
 
-// interface SidebarProps extends BoxProps {
-//   onClose: () => void;
-// }
-
 const SidebarContent = ({ onClose, ...rest }) => {
   return (
     <Box
@@ -101,26 +98,19 @@ const SidebarContent = ({ onClose, ...rest }) => {
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
+      {LinkItems.map((item,i) => (
+        <NavItem key={item.name} icon={item.icon} link={item.links}>
+          {item.name}
         </NavItem>
+        
       ))}
     </Box>
   );
 };
 
-// interface NavItemProps extends FlexProps {
-//   icon: IconType;
-//   children: ReactText;
-// }
-const NavItem = ({ icon, children, ...rest }) => {
+const NavItem = ({ icon, children,link ,...rest }) => {
   return (
-    <Link
-      href="#"
-      style={{ textDecoration: "none" }}
-      _focus={{ boxShadow: "none" }}
-    >
+    <NavLink to={link} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
         align="center"
         p="4"
@@ -146,7 +136,7 @@ const NavItem = ({ icon, children, ...rest }) => {
         )}
         {children}
       </Flex>
-    </Link>
+      </NavLink>
   );
 };
 
