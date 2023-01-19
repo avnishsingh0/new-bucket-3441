@@ -1,11 +1,23 @@
 import React from 'react'
 import { Container} from '@chakra-ui/react'
-import { Flex, Spacer } from '@chakra-ui/react'
+import { Flex, Spacer} from '@chakra-ui/react'
 import { Box,Image } from '@chakra-ui/react'
+
+
 import { StackDivider, VStack } from '@chakra-ui/react'
 import { SimpleGrid } from '@chakra-ui/react'
 import { Select } from '@chakra-ui/react'
 import { Input } from '@chakra-ui/react'
+import {
+    Table,
+    Thead,
+    Tbody,
+    Tr,
+    Th,
+    Td,
+    
+    TableContainer,
+  } from '@chakra-ui/react'
 
 import { Button } from '@chakra-ui/react'
 import {Text} from '@chakra-ui/react'
@@ -17,6 +29,7 @@ export const SinglePage = () => {
           imageUrl: 'https://cdn.caratlane.com/media/catalog/product/J/R/JR07340-1RP9OO_1_lar.jpg',
           imageAlt: 'Rear view of modern home with pool',
           imageUrl2:'https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95//J/R/JR03126-WGP900_13_pdtouch.png',
+          imageUrl3:'https://assets.cltstatic.com/images/responsive/packaging.jpg',
         }
 
 
@@ -225,6 +238,96 @@ export const SinglePage = () => {
                 </Box>
                 
         </SimpleGrid>
+
+        </Container >
+        <Container  h="450px" maxW="1100px">
+        <VStack
+            divider={<StackDivider  />}>
+            <Box h='180px' w="1100px" >
+            <Flex >
+                    <Box  h="180" w='750px' >
+                        
+                    <Text fontSize="20px"  color="black">Products Details :</Text>
+                    <Flex>
+                        <Box h="170px" w="220px" mt="10px" >
+                            <Text fontSize="18px" color="blue.800">Product Information</Text>
+                            
+                            
+                            <Text fontSize="15px">Width-6.3mm</Text>
+                            <Text fontSize="15px">Height-10.4mm</Text>
+                            <Text fontSize="15px">Gross Weight-3.302</Text>
+                            <Text fontSize="15px">Size:12(51.8mm)</Text>
+                        </Box>
+                        <Box  h="170px" w="260px" >
+                            <Text fontSize="15px" mt="10px">
+                            Set in 18 KT White Gold(3.210 g) with diamonds (0.460 ct ,IJ-SI)
+                            </Text>
+                        </Box>
+                        <Box  h="170px" w="240px" >
+                            <Text fontSize="15px" color="blue.800" mt="10px" ml="20px">SKU:JR03126-WGP900</Text>
+                        </Box>
+                    </Flex>
+                    </Box>
+                    
+                    <Box  h="200" w='350px' >
+                        <Image h="200px" src={property.imageUrl3} alt={property.imageAlt}></Image>
+                    </Box>
+            </Flex>
+                                
+            </Box>
+            <Box h='30px'  w="1100px"  >
+                <Text fontSize="18px">Diamond Details</Text>
+            </Box>
+            <Box h='140px'  w="1100px"   >
+                            <TableContainer>
+                <Table variant='simple' h="140px" w="500px">
+                    
+                    <Thead>
+                    <Tr>
+                        <Th>Diamond Type</Th>
+                        <Th>Setting Type</Th>
+                        <Th isNumeric>Total Number</Th>
+                        <Th isNumeric>Total Weight</Th>
+                    </Tr>
+                    </Thead>
+                    <Tbody>
+                    <Tr>
+                        <Td>IJ-SI</Td>
+                        <Td>Plate Prong</Td>
+                        <Td isNumeric>29</Td>
+                        <Td isNumeric>0.345crt</Td>
+                    </Tr>
+                    <Tr>
+                    <Td>IJ-SI</Td>
+                        <Td>Plate Prong</Td>
+                        <Td isNumeric>29</Td>
+                        <Td isNumeric>0.345crt</Td>
+                    </Tr>
+                   
+                    </Tbody>
+                    
+                </Table>
+                </TableContainer>
+                
+            </Box>
+            <Box h='40px'  w="1100px"   >
+                <Text fontSize="18px">Price BreakUp </Text>
+            </Box>
+
+        </VStack>
+
+
+
+
+        </Container>
+        <Container h="350px" maxW="1100px" border="1px solid red">
+        <Box overflowX="scroll">
+            <Image src={property.imageUrl} mr={4} />
+            <Image src={property.imageUrl2} mr={4} />
+            
+            
+            </Box>
+
 
         </Container>
      
