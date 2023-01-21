@@ -9,6 +9,7 @@ import {FaUser} from "react-icons/fa"
 import {RiShoppingBasket2Line} from "react-icons/ri"
 import {BiHomeCircle} from "react-icons/bi"
 import {IoStorefrontSharp} from "react-icons/io5"
+import { Link } from 'react-router-dom';
  
 
 const Navbar = () => {
@@ -17,61 +18,61 @@ const Navbar = () => {
   
     return (
         <>
-        <Box  boxShadow={'lg'} p='2' bg={useColorModeValue('#1A365D', '#1A365D')} h={"20px"}></Box>
+        <Box  boxShadow={'lg'} p='2' bg={useColorModeValue('#1A365D', '#1A365D')} h={"20px"} position="fixed"></Box>
             <Box  w={"100%"}  position="fixed" zIndex={"10"}    >
                 <Flex boxShadow='lg' p='2'h={16} alignItems={'center'} gap={"10px"}  bg={useColorModeValue('#F6F4ff', '#F6F4ff')}>
                     <IconButton bg={"#F6F4ff"} icon={isOpen ? <CloseIcon /> : <HamburgerIcon />} aria-label={'Open Menu'} display={{ md: 'none' }} onClick={isOpen ? onClose : onOpen} />
                     <HStack gap={"10px"} alignItems={'center'}  >
-                        <Box  >
-                            <Image w={"150px"} src={"/images/caratlane-logo.png"} alt="log" />
-                            </Box>
-                        <HStack as={'nav'} display={{ base: 'none', md: 'flex' }} cursor="pointer">
-                        <Box display={"flex"} alignItems={"center"}> 
-                        <IconButton fontSize={{base:"10px",sm:"10px",md:'20px'}} bg={"#F6F4ff"}  icon={<AiOutlineHome/>} color="#4f3267" _hover={{ color: "#231535" }} />
-                        <Text fontFamily={"sans-serif"}  fontSize={{ base: "5px", sm: "5px", md: "11px" }} marginTop={"7px"}   color="#4f3267" _hover={{  color: "#000000", textDecoration: "underline" }}>FREE TRY AT HOME</Text>
+                        <Box>
+                        <Image w={{base:"80px",md:"150px"}} src={"/images/caratlane-logo.png"} alt="log" />
                         </Box>
-                        <Box display={"flex"} alignItems={"center"}> 
-                        <IconButton fontSize={{base:"10px",sm:"10px",md:'20px'}} bg={"#F6F4ff"} icon={<IoStorefrontOutline/>} color="#4f3267" _hover={{ color: "#231535" }} />
-                            <Text fontFamily={"sans-serif"} fontSize={{ base: "8px", sm: "8px", md: "11px" }} marginTop={"7px"}   color="#4f3267" _hover={{color: "#000000", textDecoration: "underline" }}>FIND STORE</Text>
+                        <HStack as={'nav'} display={{ base: 'none',sm:"flex", md: 'flex' }} cursor="pointer">
+
+                        <Box display={{sm:"none",md:"flex"}} alignItems={"center"}> 
+                        <IconButton fontSize={{base:"5px",sm:"none",md:'20px'}} bg={"#F6F4ff"}  icon={<AiOutlineHome/>} color="#4f3267" _hover={{ color: "#231535" }} />
+                        <Text fontFamily={"sans-serif"}  fontSize={{ sm: "8px", md: "11px" }} marginTop={"7px"}   color="#4f3267" _hover={{  color: "#000000", textDecoration: "underline" }}>FREE TRY AT HOME</Text>
+                        </Box>
+                        <Box display={{sm:"none",md:"flex"}} alignItems={"center"}> 
+                        <IconButton fontSize={{base:"5px",sm:"none",md:'20px'}} bg={"#F6F4ff"} icon={<IoStorefrontOutline/>} color="#4f3267" _hover={{ color: "#231535" }} />
+                            <Text fontFamily={"sans-serif"} fontSize={{ base: "8px", md: "11px" }} marginTop={"7px"}   color="#4f3267" _hover={{color: "#000000", textDecoration: "underline" }}>FIND STORE</Text>
                             </Box>
 
-                            <Box display={"flex"} alignItems={"center"}> 
-                            <IconButton fontSize={{base:"10px",sm:"10px",md:'20px'}} bg={"#F6F4ff"} color="#4f3267" _hover={{ color: "#231535" }} icon={<BsHandbag/>} />
-                          <Text fontFamily={"sans-serif"} fontSize={{ base: "8px", sm: "8px", md: "11px" }} marginTop={"7px"}   color="#4f3267" _hover={{  color: "#000000", textDecoration: "underline" }}>PLAN OF PURCHASE</Text>
+                            <Box display={{sm:"none",md:"flex"}} alignItems={"center"}> 
+                            <IconButton fontSize={{base:"5px",sm:"none",md:'20px'}} bg={"#F6F4ff"} color="#4f3267" _hover={{ color: "#231535" }} icon={<BsHandbag/>} />
+                          <Text fontFamily={"sans-serif"} fontSize={{ base: "8px",sm:"none", md: "11px" }} marginTop={"7px"}   color="#4f3267" _hover={{  color: "#000000", textDecoration: "underline" }}>PLAN OF PURCHASE</Text>
                           
                           </Box>
 
-                            <Box display={"flex"}  alignItems={"center"} >
-                            <IconButton fontSize={{base:"10px",sm:"10px",md:'25px'}} bg={"#F6F4ff"} icon={<AiOutlineGold/>} color="#4f3267" _hover={{ color: "#231535" }}/>
-                            <Text fontFamily={"sans-serif"} fontSize={{ base: "8px", sm: "8px", md: "11px" }}   color="#4f3267" _hover={{  color: "#000000", textDecoration: "underline" }}>BUY DIGITAL GOLD</Text>
+                            <Box display={{sm:"none",md:"flex"}}  alignItems={"center"} >
+                            <IconButton fontSize={{base:"10px",sm:"none",md:'25px'}} bg={"#F6F4ff"} icon={<AiOutlineGold/>} color="#4f3267" _hover={{ color: "#231535" }}/>
+                            <Text fontFamily={"sans-serif"} fontSize={{ base: "8px",sm:"none" ,md: "11px" }}   color="#4f3267" _hover={{  color: "#000000", textDecoration: "underline" }}>BUY DIGITAL GOLD</Text>
                             </Box>
 
                             <Box className='input-box' >
                             <FormControl>
                             <InputGroup >
-                            <Input _focusVisible={{border:"1px solid purple"}} border={"1px solid purple"} placeholder='search' _placeholder={{color:"black"}} bg={"white"} rounded="md" w={"190px"} fontSize={"11px"} lineHeight={"18px"}color={"black"} />
-                            <InputRightElement width="2rem">
-                            <IconButton bgGradient='linear(to-l, #7918CA, #FF0888)' aria-label='Search database' color={"white"} icon={<SearchIcon />} h="2.4rem"  w={"50px"} roundedLeft={"sm"}   />
+                            <Input _focusVisible={{border:"1px solid purple"}} border={"1px solid purple"} placeholder='search' _placeholder={{color:"black"}} bg={"white"} rounded="md" w={{md:"190px"}} fontSize={"11px"} lineHeight={"18px"}color={"black"} />
+                            <InputRightElement width={{md:"2rem"}}>
+                            <IconButton bgGradient='linear(to-l, #7918CA, #FF0888)' aria-label='Search database' color={"white"} icon={<SearchIcon />} h={"2.4rem"}  w={"50px"} roundedLeft={"sm"}   />
                             </InputRightElement>
                             </InputGroup>
                             </FormControl>
                             </Box>
                            
-                           <Box display={"flex"}  alignItems={"center"}>
-                           <IconButton fontSize={{base:"10px",sm:"10px",md:'20px'}} bg={"#F6F4ff"} icon={<MdLocationPin/>}  _hover={{ color: "#231535" }}/>
-                            <Text fontFamily={"sans-serif"}  fontSize={{ base: "5px", sm: "5px", md: "11px" }}  color="#4f3267" _hover={{ color: "#000000", textDecoration: "underline" }}>PIN CODE</Text>
+                           <Box display={{sm:"none",md:"flex"}}  alignItems={"center"}>
+                           <IconButton fontSize={{base:"5px",md:'20px'}} bg={"#F6F4ff"} icon={<MdLocationPin/>}  _hover={{ color: "#231535" }}/>
+                            <Text fontFamily={"sans-serif"}  fontSize={{ base: "5px", md: "11px" }}  color="#4f3267" _hover={{ color: "#000000", textDecoration: "underline" }}>PIN CODE</Text>
                             </Box>
-                            <IconButton fontSize={{base:"10px",sm:"10px",md:'15px'}} bg={"#F6F4ff"} icon={<FaUser/>}  _hover={{ color: "#231535" }}/>
-                            <Avatar name='indian-flag' w={"40px"} size={"sm"} src='https://img.freepik.com/free-vector/round-flag-india_23-2147813736.jpg?w=740&t=st=1674037779~exp=1674038379~hmac=37daab84e0a0fe59d3e5c96a6890e019c413fcf3bc6d1265bb10ebe4b461afe4' />
-                            <IconButton fontSize={{base:"10px",sm:"10px",md:'15px'}}  icon={<AiFillHeart/>}  _hover={{ color: "#231535" }}/>
-                            <IconButton fontSize={{base:"10px",sm:"10px",md:'15px'}} bg={"#F6F4ff"} icon={<RiShoppingBasket2Line/>}  _hover={{ color: "#231535" }}/>
+
+                           <Link to={"/signIn"} ><IconButton fontSize={{base:"5px",sm:"13px",md:'15px'}} bg={"#F6F4ff"}  icon={<FaUser/>}  _hover={{ color: "#231535" }}/></Link> 
+                            <Avatar name='indian-flag' w={{sm:"25px",md:"40px"}} size={"sm"} src='https://img.freepik.com/free-vector/round-flag-india_23-2147813736.jpg?w=740&t=st=1674037779~exp=1674038379~hmac=37daab84e0a0fe59d3e5c96a6890e019c413fcf3bc6d1265bb10ebe4b461afe4' />
+                            <IconButton fontSize={{base:"5px",sm:"13px",md:'15px'}}  icon={<AiFillHeart/>}  _hover={{ color: "#231535" }}/>
+                            <IconButton fontSize={{base:"5px",sm:"13px",md:'15px'}} bg={"#F6F4ff"} icon={<RiShoppingBasket2Line/>}  _hover={{ color: "#231535" }}/>
                         </HStack>
-                    </HStack>
-                  
+                    </HStack> 
                 </Flex>
 
-                    <Box className='dropDown-Menu' display={"flex"}  justifyContent={"space-between"} boxShadow='base' p='2' rounded='sm' bg='white' w={"100%"} >
-
+                    <Box className='dropDown-Menu' display={{ base: 'none', md: 'flex' }}  justifyContent={"space-between"} boxShadow='base' p='2' rounded='sm' bg='white' w={"100%"} >
                     <Box> 
                     <Button as={Button} bg={"white"} _hover={{bg:"#F6F4ff",fontWeight:"500"}}  fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"42px"} fontWeight={"thin"} >NEW ARRIVALS</Button>
                     </Box>
@@ -167,7 +168,7 @@ const Navbar = () => {
                     </Box>
 
 
-                    <Box display={"grid"} >
+                    <Box  >
                     <Box>
                     <Menu>
                     <MenuButton as={Button} bg={"white"} _hover={{bg:"#F6F4ff",fontWeight:"500" }}  fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"42px"} fontWeight={"thin"} >BRACELETS & BANGLES</MenuButton>
@@ -227,33 +228,23 @@ const Navbar = () => {
                     </MenuItem>
 
                     <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
+                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDWGGN_CMXIn41McZoNRhhodezsn7W41vi65wmJu0clfCO9e-fa_ehYsfYMnlYv1bTLjE&usqp=CAU"   alt='Rings' mr='12px'/>
+                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>MENS SOLITAIRES</Text>
                     </MenuItem>
 
                     <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
+                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2qq3tUerLED-tGlGjLv8TsINVmngpZqeVVA&usqp=CAU"   alt='Rings' mr='12px'/>
+                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>EARRINGS</Text>
                     </MenuItem>
 
                     <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
+                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-niLrGltG7l5HrRqfqyIC8hZZpjuVXisMcg&usqp=CAU"   alt='Rings' mr='12px'/>
+                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>BRIDAL SETS</Text>
                     </MenuItem>
 
                     <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='40px'>
-                    <Image boxSize='2rem' borderRadius='full'src='https://placekitten.com/120/120' alt='Simon the pensive'mr='12px'/>
-                    <span>Simon the pensive</span>
+                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwaQjQtIWpJ6bm8UGTPoY5TRCWLxp6ZK04CA&usqp=CAU"   alt='Rings' mr='12px'/>
+                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>MANGALSUTRA</Text>
                     </MenuItem>
                     </MenuList>
                     </Menu>
@@ -277,104 +268,22 @@ const Navbar = () => {
                     <Menu>
                     <MenuButton as={Button} bg={"white"} _hover={{bg:"#F6F4ff",fontWeight:"500" }}  fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"42px"}  fontWeight={"thin"}>OTHER JEWELLERY</MenuButton>
                     <MenuList>
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='40px'>
-                    <Image boxSize='2rem' borderRadius='full'src='https://placekitten.com/120/120' alt='Simon the pensive'mr='12px'/>
-                    <span>Simon the pensive</span>
-                    </MenuItem>
                     </MenuList>
                     </Menu>
                     </Box>
                     </Box>
 
-                    <Box display={"grid"} >
+                    <Box >
                     <Box>
                     <Menu>
                     <MenuButton as={Button} bg={"white"} _hover={{bg:"#F6F4ff",fontWeight:"500" }}  fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"42px"} fontWeight={"thin"} >GIFTING</MenuButton>
                     <MenuList>
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='48px'>
-                    <Image boxSize='4rem'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlo5JpfJGnijXQVGGpuKQmt-FR2EtIwR3Ieg&usqp=CAU"   alt='Rings' mr='12px'/>
-                    <Text as={"span"} fontFamily={"sans-serif"} fontSize={"11px"} lineHeight={"18px"}>ENGAGEMENT</Text>
-                    </MenuItem>
-
-                    <MenuItem minH='40px'>
-                    <Image boxSize='2rem' borderRadius='full'src='https://placekitten.com/120/120' alt='Simon the pensive'mr='12px'/>
-                    <span>Simon the pensive</span>
-                    </MenuItem>
+                        <Box  display={"flex"} gap={"10px"}>
+                        <Image  w={"5%"} src="https://images.pexels.com/photos/1454184/pexels-photo-1454184.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+                        <Image  w={"5%"} src="https://images.pexels.com/photos/2799862/pexels-photo-2799862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+                        <Image  w={"5%"} src="https://images.pexels.com/photos/6779877/pexels-photo-6779877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+                        <Image  w={"5%"} src="https://images.pexels.com/photos/5876688/pexels-photo-5876688.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+                        </Box>
                     </MenuList>
                     </Menu>
                     </Box>
@@ -458,18 +367,57 @@ const Navbar = () => {
                             <Box display={"flex"}  gap={"20px"}mt={"20px"}>
                             <Image rounded={"xl"} w={"10%"} src='https://images.pexels.com/photos/7893672/pexels-photo-7893672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' />
                             <Box boxShadow='xs' p='6' rounded='md' bg='white' w={"90%"} >WATCH & BUY</Box>
-                            </Box>
-                           
+                            </Box> 
                         </Stack>
                     </Box>
-                ) : <FormControl display={{md:"none",sm:"block"}} >
+                ) : 
+                <>
+                <FormControl display={{md:"none",sm:"block"}} >
                 <InputGroup  >
                 <Input _focusVisible={{border:"1px solid purple"}} border={"1px solid purple"} placeholder='search' _placeholder={{color:"black"}}  bg={"white"} rounded="md"  w={"100%"} fontSize={"11px"} lineHeight={"18px"}color={"black"} />
                 <InputRightElement width="2rem">
                 <IconButton bgGradient='linear(to-l, #7918CA, #FF0888)' aria-label='Search database' color={"white"} icon={<SearchIcon />} h="2.4rem"  w={"50px"} roundedLeft={"sm"}   />
                 </InputRightElement>
                 </InputGroup>
-                </FormControl>}
+                </FormControl>
+                 <Box display={{base:"flex",sm:"flex",md:"none"}} >
+                        <Box w={"20%"} textAlign="center" >
+                            <Image src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuwg-I_lEX4P9eGlHqt5-9h329hxYSmCziEg&usqp=CAU"} />
+                            <Text fontSize={{base:"6px",sm:"11px"}} >Watch & Buy</Text>
+                        </Box>
+
+                        <Box w={"20%"} textAlign="center" >
+                            <Image src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUbriW9R_7fom_UaZATiiwZkjgHj4Q8xXBkg&usqp=CAU"} />
+                            <Text fontSize={{base:"6px",sm:"11px"}} >New Arriavls</Text>
+                        </Box>
+
+                        <Box w={"20%"} textAlign="center" >
+                            <Image src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG2IUBwIsgdvScWcNI5IRH2u77bqkIj_5tvA&usqp=CAU"} />
+                            <Text fontSize={{base:"6px",sm:"11px"}} >Anniversary Gifts</Text>
+                        </Box>
+
+                        <Box w={"20%"} textAlign="center" >
+                            <Image src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUwq5LQpLC-jhVKkecwlvxR6AYLHDjBbqnVQ&usqp=CAU"} />
+                            <Text fontSize={{base:"6px",sm:"11px"}} >Solitairs</Text>
+                        </Box>
+
+                        <Box w={"20%"} textAlign="center" >
+                            <Image src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVoESKI0YAor-IFHLp9v5qhlNfMamTKtJUXg&usqp=CAU"} />
+                            <Text fontSize={{base:"6px",sm:"11px"}} >Rings</Text>
+                        </Box>
+
+                        <Box w={"20%"} textAlign="center" >
+                            <Image src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUaIxUTGCcGPL5ePgz1sQyyEwVTNrIpMwi_A&usqp=CAU"} />
+                            <Text fontSize={{base:"6px",sm:"11px"}} >Earrings</Text>
+                        </Box>
+
+                        <Box w={"20%"} textAlign="center" >
+                            <Image src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuwg-I_lEX4P9eGlHqt5-9h329hxYSmCziEg&usqp=CAU"} />
+                            <Text fontSize={{base:"6px",sm:"11px"}} >Watch & Buy</Text>
+                        </Box>
+                 </Box>
+                 </>       
+                }
            </Box>
         </> 
         
