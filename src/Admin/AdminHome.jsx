@@ -4,7 +4,7 @@ import WithSubnavigation from './AdminNav'
 import SimpleSidebar from './Sidebar'
 import {Text} from '@chakra-ui/react'
 import { Route, Routes } from 'react-router-dom'
-import Blog from './Blog'
+// import Blog from './Blog'
 const AdminHome = () => {
   return (
     <Box>

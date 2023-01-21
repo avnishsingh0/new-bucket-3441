@@ -37,15 +37,15 @@ import { IconType } from "react-icons";
 import { ReactText } from "react";
 const LinkItems = [
   { name: "Dashboard", icon: FiHome, links: "/adminpanel" },
-  { name: "Packages", icon: FiTrendingUp, links: "/adminpanel/blog" },
-  { name: "Customers", icon: FiCompass, links: "/logis" },
-  { name: "Product", icon: FiStar, links: "/logis" },
+  { name: "Packages", icon: FiTrendingUp, links: "/adminpanel/package" },
+  { name: "Customers", icon: FiCompass, links: "/adminpanel/customers" },
+  { name: "Orders", icon: FiStar, links: "/adminpanel/order" },
   { name: "Account", icon: FiSettings, links: "/logis" },
 ];
 
 export default function SidebarWithHeader({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-console.log(children);
+// console.log(children);
   return (
     <Box >
       <SidebarContent
@@ -179,9 +179,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
               <HStack>
                 <Avatar
                   size={"sm"}
-                  src={
-                    "C:UsershpDesktopCARATALNE\new-bucket-3441srcassetsImgavtar.jpg"
-                  }
+                 
                 />
                 <VStack
                   display={{ base: "none", md: "flex" }}

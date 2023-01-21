@@ -2,7 +2,7 @@ import { Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 import SidebarWithHeader from "./Sidebar";
 import { FiHome } from "react-icons/fi";
-import "./style.css";
+import Chart from "react-apexcharts";
 const Blog = () => {
   return (
     <Box>
@@ -78,6 +78,22 @@ const Blog = () => {
             Income <br />1
           </Box>
         </SimpleGrid>
+      </Box>
+
+      <Box mt={75}>
+        <Chart
+          type="pie"
+          width={1100}
+          height={350}
+          series={[20, 25, 36, 80]}
+          options={{
+            
+            noData: { text: "Empty Data" },
+            labels: ["Packages", "Customers", "Gift Card", "Income"],
+          }}
+        >
+          
+        </Chart>
       </Box>
     </Box>
   );
