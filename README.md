@@ -4,19 +4,19 @@ This is a collaborative Project from Masai School in the Construct Week develope
 
 
 
-1. Avnish Kumar :- https://github.com/Shubhamverma94 , https://www.linkedin.com/in/shubhamverma17/
+1. Avnish Kumar :- https://github.com/avnishsingh0 , https://www.linkedin.com/in/shubhamverma17/
 
-2. Nandan Kumar Singh :- https://github.com/TejasBishnoi21  , https://www.linkedin.com/in/tejasvi-bishnoi-81294b14a/
+2. Nandan Kumar Singh :- https://github.com/nanksi  , https://www.linkedin.com/in/tejasvi-bishnoi-81294b14a/
 
-3. Pooja Rathoor :- https://github.com/avnishsingh0 , https://www.linkedin.com/in/avnish-kumar-a9347b239/
+3. Pooja Rathoor :- https://github.com/PoojaRathod5 , https://www.linkedin.com/in/avnish-kumar-a9347b239/
 
-4. Adham Kaji :- https://github.com/Devendra0192 , https://www.linkedin.com/in/devendrakumar9161/
+4. Adham Kaji :- https://github.com/Adhamkazi , https://www.linkedin.com/in/devendrakumar9161/
 
 💻Project Unique Name :- Infinite Jewellery ✈️
 ---
 About CARATLANE :- CaratLane is an Indian physical and online jewelry retailer, headquartered in Chennai, India. The company was founded by Mithun Sacheti, and Srinivasa Gopalan, in 2008. CaratLane works with the vision of offering tastefully designed jewellery at revolutionary prices
 
-<img src="https://th.bing.com/th/id/OIP.ipvLAkDARBytu6-i26F_wwHaEj?w=262&h=180&c=7&r=0&o=5&pid=1.7"/>
+<img src="https://cdn.caratlane.com/media/static/images/V4/2023/CL/01-JAN/AppBanner/Festive/01/2X.jpg"/>
 
 <img src="https://th.bing.com/th/id/OIP.e2HNKtPPFbKKY9u5GrIlZgHaE-?w=240&h=180&c=7&r=0&o=5&pid=1.7"/>
 💫Tech & Tools Used :
