@@ -18,7 +18,7 @@ About CARATLANE :- CaratLane is an Indian physical and online jewelry retailer, 
 
 <img src="https://cdn.caratlane.com/media/static/images/V4/2023/CL/01-JAN/AppBanner/Festive/01/2X.jpg"/>
 
-<img src="https://th.bing.com/th/id/OIP.e2HNKtPPFbKKY9u5GrIlZgHaE-?w=240&h=180&c=7&r=0&o=5&pid=1.7"/>
+<img src="https://cdn.caratlane.com/media/static/images/V4/2023/CL/01-JAN/HP-Banner/JustArrived/1X.jpg"/>
 💫Tech & Tools Used :
 ---
 
