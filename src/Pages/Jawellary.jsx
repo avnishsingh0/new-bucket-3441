@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Filter } from "../Components/Jewellery/Filter";
 import { Products } from "../Components/Jewellery/Products";
 import { Sortbybar } from "../Components/Jewellery/Sortbybar";
-import { getProducts } from "../Redux/AppReducer/action";
+import { getProducts } from "../Redux/AppReducer/product/action";
 
 export const Jawellary = () => {
   const dispatch = useDispatch();
