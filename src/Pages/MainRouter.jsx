@@ -26,6 +26,8 @@ const MainRouter = () => {
       <Route path="/SingleProduct/:id" element={<SingleProduct />} />;
       <Route path="*" element={<div>Page Not Found</div>} />
       <Route path="/adminpanel" element={<Dashboard />} />
+
+      
       <Route path="/adminpanel/package" element={<Multistep />} />
       <Route path="/adminpanel/customers" element={<Customers />} />
       <Route path="/adminpanel/order" element={<Order />} />
