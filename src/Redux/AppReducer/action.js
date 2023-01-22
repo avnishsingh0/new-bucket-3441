@@ -27,7 +27,7 @@ export const getProductsFailure = () => {
 export const getProducts = (payload) => (dispatch) => {
   dispatch(getProductsRequest());
   return axios
-    .get("http://localhost:8080/products")
+    .get("https://caratlane-database.vercel.app/products")
     .then((r) => {
       dispatch(getProductsSuccess(r.data));
     })

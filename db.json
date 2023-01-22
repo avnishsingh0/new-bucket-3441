@@ -10,22 +10,6 @@
     },
     {
       "id": 2,
-      "name": "Madesha Drop Earrings",
-      "type": "Earrings",
-      "image1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07601-1YP6P0_1_lar.jpg",
-      "image2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07601-1YP6P0_7_lar.jpg",
-      "price": "126796"
-    },
-    {
-      "id": 3,
-      "name": "Borja Diamond Stud Earrings",
-      "type": "Earrings",
-      "image1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE06891-1YP600_1_lar.jpg",
-      "image2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE06891-1YP600_7_lar.jpg",
-      "price": "40963"
-    },
-    {
-      "id": 4,
       "name": "Emma Flora Diamond Ring",
       "type": "Rings",
       "image1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03126-WGP900_1_lar.jpg",
@@ -33,15 +17,7 @@
       "price": "64513"
     },
     {
-      "id": 5,
-      "name": "Mutyaa Pearl Ring",
-      "type": "Rings",
-      "image1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07311-1YP6P0_1_lar.jpg",
-      "image2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07311-1YP6P0_7_lar.jpg",
-      "price": "35176"
-    },
-    {
-      "id": 6,
+      "id": 3,
       "name": "Ben Platinum Band for Men",
       "type": "Rings",
       "image1": "https://cdn.caratlane.com/media/catalog/product/U/R/UR00473-PT0000_1_lar.jpg",
@@ -49,7 +25,7 @@
       "price": "40022"
     },
     {
-      "id": 7,
+      "id": 4,
       "name": "Romeo Gold Band for Men",
       "type": "Rings",
       "image1": "https://cdn.caratlane.com/media/catalog/product/U/R/UR00214-YG0000_1_lar.jpg",
@@ -57,7 +33,15 @@
       "price": "48060"
     },
     {
-      "id": 8,
+      "id": 5,
+      "name": "Madesha Drop Earrings",
+      "type": "Earrings",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07601-1YP6P0_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07601-1YP6P0_7_lar.jpg",
+      "price": "126796"
+    },
+    {
+      "id": 6,
       "name": "Roya Gemstone Necklace",
       "type": "Necklaces",
       "image1": "https://cdn.caratlane.com/media/catalog/product/J/L/JL04408-1YP6P0_1_lar.jpg",
@@ -65,12 +49,28 @@
       "price": "94835"
     },
     {
+      "id": 7,
+      "name": "Mutyaa Pearl Ring",
+      "type": "Rings",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07311-1YP6P0_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07311-1YP6P0_7_lar.jpg",
+      "price": "35176"
+    },
+    {
+      "id": 8,
+      "name": "Alder Root Diamond Pendant",
+      "type": "Pendants",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/J/P/JP03871-YGP900_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/J/P/JP03871-YGP900_7_lar.jpg",
+      "price": "49361"
+    },
+    {
       "id": 9,
-      "name": "Solitary Pearl Necklace",
-      "type": "Necklaces",
-      "image1": "https://cdn.caratlane.com/media/catalog/product/U/L/UL00338-YG00P0_1_lar.jpg",
-      "image2": "https://cdn.caratlane.com/media/catalog/product/U/L/UL00338-YG00P0_6_lar.jpg",
-      "price": "14900"
+      "name": "Borja Diamond Stud Earrings",
+      "type": "Earrings",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE06891-1YP600_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE06891-1YP600_7_lar.jpg",
+      "price": "40963"
     },
     {
       "id": 10,
@@ -90,54 +90,6 @@
     },
     {
       "id": 12,
-      "name": "Diamond Siddh Ganpati Pendant",
-      "type": "Pendants",
-      "image1": "https://cdn.caratlane.com/media/catalog/product/J/P/JP04893-1YP900_1_lar.jpg",
-      "image2": "https://cdn.caratlane.com/media/catalog/product/J/P/JP04893-1YP900_7_lar.jpg",
-      "price": "6074"
-    },
-    {
-      "id": 13,
-      "name": "Ashtadal Gemstone Pendant",
-      "type": "Pendants",
-      "image1": "https://cdn.caratlane.com/media/catalog/product/J/P/JP02441-YGP9NV_1_lar.jpg",
-      "image2": "https://cdn.caratlane.com/media/catalog/product/J/P/JP02441-YGP9NV_7_lar.jpg",
-      "price": "18972 "
-    },
-    {
-      "id": 14,
-      "name": "Alder Root Diamond Pendant",
-      "type": "Pendants",
-      "image1": "https://cdn.caratlane.com/media/catalog/product/J/P/JP03871-YGP900_1_lar.jpg",
-      "image2": "https://cdn.caratlane.com/media/catalog/product/J/P/JP03871-YGP900_7_lar.jpg",
-      "price": "49361"
-    },
-    {
-      "id": 15,
-      "name": "Austere Cluster Diamond Bracelet",
-      "type": "Bracelets",
-      "image1": "https://cdn.caratlane.com/media/catalog/product/J/T/JT00361-YGP600_1_lar.jpg",
-      "image2": "https://cdn.caratlane.com/media/catalog/product/J/T/JT00361-YGP600_7_lar.jpg",
-      "price": "79917"
-    },
-    {
-      "id": 16,
-      "name": "Roya Gemstone Bracelet",
-      "type": "Bracelets",
-      "image1": "https://cdn.caratlane.com/media/catalog/product/J/T/JT01573-1YP6P0_1_lar.jpg",
-      "image2": "https://cdn.caratlane.com/media/catalog/product/J/T/JT01573-1YP6P0_7_lar.jpg",
-      "price": "137033"
-    },
-    {
-      "id": 17,
-      "name": "Akhil Diamond Bracelet for Men",
-      "type": "Bracelets",
-      "image1": "https://cdn.caratlane.com/media/catalog/product/J/T/JT00312-YGP900_1_lar.jpg",
-      "image2": "https://cdn.caratlane.com/media/catalog/product/J/T/JT00312-YGP900_7_lar.jpg",
-      "price": "54720"
-    },
-    {
-      "id": 18,
       "name": "Brad Diamond Bracelet for Men",
       "type": "Bracelets",
       "image1": "https://cdn.caratlane.com/media/catalog/product/J/T/JT00307-YGP600_1_lar.jpg",
@@ -145,15 +97,31 @@
       "price": "72161"
     },
     {
-      "id": 19,
-      "name": "Aashika Diamond Mangalsutra",
-      "type": "Mangalsutra",
-      "image1": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00298-YGP600_1_lar.jpg",
-      "image2": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00298-YGP600_7_lar.jpg",
-      "price": "42554"
+      "id": 13,
+      "name": "Diamond Siddh Ganpati Pendant",
+      "type": "Pendants",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/J/P/JP04893-1YP900_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/J/P/JP04893-1YP900_7_lar.jpg",
+      "price": "6074"
     },
     {
-      "id": 20,
+      "id": 14,
+      "name": "Ashtadal Gemstone Pendant",
+      "type": "Pendants",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/J/P/JP02441-YGP9NV_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/J/P/JP02441-YGP9NV_7_lar.jpg",
+      "price": "18972 "
+    },
+    {
+      "id": 15,
+      "name": "Solitary Pearl Necklace",
+      "type": "Necklaces",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/U/L/UL00338-YG00P0_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/U/L/UL00338-YG00P0_6_lar.jpg",
+      "price": "14900"
+    },
+    {
+      "id": 16,
       "name": "Vyoma Diamond Mangalsutra",
       "type": "Mangalsutra",
       "image1": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00296-RGP600_1_lar.jpg",
@@ -161,7 +129,47 @@
       "price": "40637"
     },
     {
+      "id": 17,
+      "name": "Austere Cluster Diamond Bracelet",
+      "type": "Bracelets",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/J/T/JT00361-YGP600_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/J/T/JT00361-YGP600_7_lar.jpg",
+      "price": "79917"
+    },
+    {
+      "id": 18,
+      "name": "Saisha Diamond Mangalsutra",
+      "type": "Mangalsutra",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00289-RGP600_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00289-RGP600_7_lar.jpg",
+      "price": "40727"
+    },
+    {
+      "id": 19,
+      "name": "Roya Gemstone Bracelet",
+      "type": "Bracelets",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/J/T/JT01573-1YP6P0_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/J/T/JT01573-1YP6P0_7_lar.jpg",
+      "price": "137033"
+    },
+    {
+      "id": 20,
+      "name": "Akhil Diamond Bracelet for Men",
+      "type": "Bracelets",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/J/T/JT00312-YGP900_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/J/T/JT00312-YGP900_7_lar.jpg",
+      "price": "54720"
+    },
+    {
       "id": 21,
+      "name": "Aashika Diamond Mangalsutra",
+      "type": "Mangalsutra",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00298-YGP600_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00298-YGP600_7_lar.jpg",
+      "price": "42554"
+    },
+    {
+      "id": 22,
       "name": "Nessa Evil Eye Diamond Mangalsutra",
       "type": "Mangalsutra",
       "image1": "https://cdn.caratlane.com/media/catalog/product/J/S/JS01058-1YP900_1_lar.jpg",
@@ -169,20 +177,12 @@
       "price": "29889"
     },
     {
-      "id": 22,
+      "id": 23,
       "name": "Lisa Diamond Mangalsutra",
       "type": "Mangalsutra",
       "image1": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00492-YGP600_1_lar.jpg",
       "image2": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00492-YGP600_7_lar.jpg",
       "price": "50711"
-    },
-    {
-      "id": 23,
-      "name": "Saisha Diamond Mangalsutra",
-      "type": "Mangalsutra",
-      "image1": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00289-RGP600_1_lar.jpg",
-      "image2": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00289-RGP600_7_lar.jpg",
-      "price": "40727"
     },
     {
       "id": 24,

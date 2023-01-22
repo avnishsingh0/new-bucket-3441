@@ -1,22 +1,22 @@
 import { SingleProdCard } from "./SingleProdCard";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getProducts } from "../../Redux/AppReducer/action";
-import { Box, Grid } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
+import { Grid } from "@chakra-ui/react";
 
-export const Products = () => {
-  const dispatch = useDispatch();
-  const { products, isLoading } = useSelector((store) => store.AppReducer);
-
-  useEffect(() => {
-    dispatch(getProducts());
-  }, []);
+export const Products = ({ prod }) => {
+  const { isLoading } = useSelector((store) => store.AppReducer);
 
   return (
     <>
       {!isLoading && (
-        <Grid templateColumns="repeat(3, 1fr)">
-          {products.map((el) => {
+        <Grid
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            sm: "repeat(2, 1fr)",
+            md: "repeat(2, 1fr)",
+            lg: "repeat(3, 1fr)",
+          }}
+        >
+          {prod.map((el) => {
             return <SingleProdCard key={el.id} {...el} />;
           })}
         </Grid>
