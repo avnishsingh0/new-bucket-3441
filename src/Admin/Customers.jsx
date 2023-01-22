@@ -15,7 +15,7 @@ import {
 import CutomerBody from "./CutomerBody";
 import React, { useEffect, useState } from "react";
 import SidebarWithHeader from "./Sidebar";
-import InitialFocus from './Modal'
+import InitialFocus from "./Modal";
 const Customers = () => {
   const [cart, setCart] = useState([]);
 
@@ -23,7 +23,7 @@ const Customers = () => {
     getJewlery();
   }, [1]);
   function getJewlery() {
-    fetch("https://caratlane-database.vercel.app/products").then((result) => {
+    fetch("http://localhost:8080/posts").then((result) => {
       result.json().then((resp) => {
         // console.log(resp);
         setCart(resp);
@@ -32,7 +32,7 @@ const Customers = () => {
   }
 
   function deleteItem(id) {
-    fetch(`https://caratlane-database.vercel.app/products/${id}`, {
+    fetch(`http://localhost:8080/posts/${id}`, {
       method: "DELETE",
     }).then((result) => {
       result.json().then((resp) => {
@@ -58,9 +58,9 @@ const Customers = () => {
             </Tr>
           </Thead>
           {cart.map((product, index) => (
-            <Tbody key={index} >
+            <Tbody key={index}>
               <Tr>
-              <Td fontWeight={'bold'}>{index+1}.</Td>
+                <Td fontWeight={"bold"}>{index + 1}.</Td>
                 <Td>
                   <Img
                     w={50}
@@ -72,7 +72,7 @@ const Customers = () => {
                 <Td>25.4</Td>
                 <Td>25.4</Td>
                 <Td>
-                  <InitialFocus/>
+                  <InitialFocus />
                 </Td>
                 <Td>
                   <Button
@@ -88,8 +88,6 @@ const Customers = () => {
           ))}
         </Table>
       </TableContainer>
-
-     
     </Box>
   );
 };

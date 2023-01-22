@@ -9,7 +9,8 @@ import {
   Select,
   Text,
 } from "@chakra-ui/react";
-// import { SiMessenger } from "react-icons/si";
+import { SiMessenger } from "react-icons/si";
+
 import React, { useEffect, useState } from "react";
 import SidebarWithHeader from "./Sidebar";
 import MessengerButton from "./Button";
@@ -22,12 +23,12 @@ const Package = () => {
   const [originprice, setOprice] = useState("");
   const [catogery, setCatogery] = useState("");
 
-  useEffect(()=>{
-    Aos.init({duration:1500},{offset:200})
-},[])
+  useEffect(() => {
+    Aos.init({ duration: 1500 }, { offset: 200 });
+  }, []);
 
   function saveData() {
-    let data = { name, product, image,price,originprice,catogery };
+    let data = { name, product, image, price, originprice, catogery };
     // console.warn(data);
     fetch("http://localhost:8080/posts", {
       method: "POST",
@@ -56,7 +57,6 @@ const Package = () => {
         borderRadius={15}
         textAlign={"center"}
         data-aos="fade-left"
-        
       >
         <label>ADD PRODUCT</label>
         <br />
