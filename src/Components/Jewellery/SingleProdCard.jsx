@@ -1,6 +1,13 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
-export const SingleProdCard = ({ name, type, image1, image2, price }) => {
+export const SingleProdCard = ({ id, name, type, image1, image2, price }) => {
+  const navigate = useNavigate();
+  const onclickhandler=()=>{
+    console.log(id);
+    // navigate("/:id");
+  }
+
   return (
     <>
       <Box p="5">
@@ -17,7 +24,7 @@ export const SingleProdCard = ({ name, type, image1, image2, price }) => {
         <Text as={"b"}>Check delivery date </Text>
         <br />
         <Text color={"grey"}>{name}</Text>
-        <Button variant="outline" border={"1px"}>
+        <Button variant="outline" border={"1px"} onClick={onclickhandler}>
           Book Try at Home
         </Button>
       </Box>
