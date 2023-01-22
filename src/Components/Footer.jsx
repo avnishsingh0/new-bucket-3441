@@ -12,7 +12,6 @@ import {
   Image,
 } from '@chakra-ui/react';
 import { FaTwitter, FaYoutube, FaInstagram, FaPinterestP } from 'react-icons/fa';
-import { Jawellary } from './../Pages/Jawellary';
 import { AiOutlineFacebook } from 'react-icons/ai';
 import {IoIosCall} from "react-icons/io"
 import { RiMessage2Fill } from "react-icons/ri";

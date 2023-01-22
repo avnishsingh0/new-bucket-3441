@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
-import {database} from '../firebase'
-import {ref,push,child,update} from "firebase/database";
+
 import {
   Flex,
   Box,
@@ -16,22 +15,19 @@ import {
    Center,
   Text,
   useColorModeValue,
-  // Link,
   RadioGroup,
   Radio,
   Divider,
-  Alert,
-  AlertTitle,
-  AlertDescription,
+  
 } from '@chakra-ui/react';
 import { useState } from 'react';
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { FaFacebook } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import Footer from "../Components/Footer";
 import { Navigate } from "react-router-dom";
-// import {useHistory} from "react-router-dom"
+import { signup } from "../Redux/AuthReducer/action";
+import { useDispatch } from "react-redux";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -41,49 +37,55 @@ const SignIn = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password,setPassword] = useState("");
-  const [confirmPassword,setConfirmPassword] = useState("");
-  const [value, setValue] = React.useState('1')
+  // const [gender,setGender] =useState("")
+  // const [confirmPassword,setConfirmPassword] = useState("");
+  const [value, setValue] = useState('')
   const navigate = useNavigate()
+  const disptach = useDispatch()
 
-  const handleInputChange = (e) => {
-    const {id , value} = e.target;
-    if(id === "firstName"){
-        setFirstName(value);
-    }
-    if(id === "lastName"){
-        setLastName(value);
-    }
-    if(id === "email"){
-        setEmail(value);
-    }
-    if(id === "mobileNumber"){
-      setMobileNumber(value);
-  }
-    if(id === "password"){
-        setPassword(value);
-    }
-    if(id === "confirmPassword"){
-        setConfirmPassword(value);
-    }
-
-}
+//   const handleInputChange = (e) => {
+//     const {id , value} = e.target;
+//     if(id === "firstName"){
+//         setFirstName(value);
+//     }
+//     if(id === "lastName"){
+//         setLastName(value);
+//     }
+//     if(id === "email"){
+//         setEmail(value);
+//     }
+//     if(id === "mobileNumber"){
+//       setMobileNumber(value);
+//   }
+//     if(id === "password"){
+//         setPassword(value);
+//     }
+    
+// }
 
 
   const handleSubmit = () =>{
-    let obj = {
-            firstName : firstName,
-            lastName:lastName,
-            email:email,
-            mobileNumber:mobileNumber,
-            password:password,
-            confirmPassword:confirmPassword,
-        }       
-    const newPostKey = push(child(ref(database), 'posts')).key;
-    const updates = {};
-    updates['/' + newPostKey] = obj
-    // update(ref(database), updates);
-    update(ref(database), updates).then(() => navigate('/'))
-   
+      
+      let userObj = {
+        firstName : firstName,
+        lastName:lastName,
+        email:email,
+        mobileNumber:mobileNumber,
+        password:password,
+    } 
+    disptach(signup(userObj)).then(()=>{
+      navigate("/")
+    })
+
+    // fetch("http://localhost:8080/user",{
+    //   method:"POST",
+    //   headers:{"content-type":"application/json"},
+    //   body:JSON.stringify(userObj)
+    // }).then((res)=>[
+    //   console.log("sucess")
+    // ]).catch((err)=>{
+    //   console.log("err")
+    // })
 }
 
 
@@ -97,7 +99,7 @@ const SignIn = () => {
     align={'center'}
     justify={'center'}
     bg={useColorModeValue('gray.50', 'gray.800')}>
-    <Stack spacing={8} mx={'auto'} maxW={'35%'} py={12} px={6}>
+    <Stack spacing={8} mx={'auto'} maxW={'xl'} py={12} px={6}>
       <Stack align={'center'}>
         <Text fontSize={'14px'} fontFamily="sans-serif" fontWeight={"semibold"} color={'black'}>
         Sign Up with Caratlane
@@ -142,33 +144,33 @@ const SignIn = () => {
         <Stack spacing={4}>
           <Box>
             <Stack direction={"row"}  >
-              <FormControl id="ISD" >
+              <FormControl  >
                 <FormLabel fontSize={"13px"} fontFamily="sans-serif" color="#4F3267" fontWeight={"semibold"}  >ISD</FormLabel>
                 <Input w="30%" type="tel" placeholder='91' border={"1px solid #ADA9AD"} _hover={{border:"1px solid #ADA9AD"}}/>
               </FormControl>
             
               <FormControl >
                 <FormLabel fontSize={"13px"} fontFamily="sans-serif" color="#4F3267" fontWeight={"semibold"}>Mobile Number</FormLabel>
-                <Input id="mobileNumber" w={"100%"} type='tel' placeholder='phone number' border={"1px solid #ADA9AD"} _hover={{border:"1px solid #ADA9AD"}} value={mobileNumber} onChange = {(e) => handleInputChange(e)} />
+                <Input  w={"100%"} type='tel' placeholder='phone number' border={"1px solid #ADA9AD"} _hover={{border:"1px solid #ADA9AD"}} value={mobileNumber} onChange = {(e) => setMobileNumber(e.target.value)} />
               </FormControl>
             </Stack>
           </Box>
           <FormControl >
             <FormLabel fontSize={"13px"} fontFamily="sans-serif" color="#4F3267" fontWeight={"semibold"}>Email address</FormLabel>
-            <Input id="email" type="email" border={"1px solid #ADA9AD"} _hover={{border:"1px solid #ADA9AD"}} value={email} onChange = {(e) => handleInputChange(e)} />
+            <Input  type="email" border={"1px solid #ADA9AD"} _hover={{border:"1px solid #ADA9AD"}} value={email} onChange = {(e) => setEmail(e.target.value)} />
           </FormControl>
 
           <HStack>
               <Box>
                 <FormControl >
                   <FormLabel fontSize={"13px"} fontFamily="sans-serif" color="#4F3267" fontWeight={"semibold"} >First Name</FormLabel>
-                  <Input  id="firstName" type="text" border={"1px solid #ADA9AD"} _hover={{border:"1px solid #ADA9AD"}} value={firstName} onChange = {(e) => handleInputChange(e)}/>
+                  <Input  type="text" border={"1px solid #ADA9AD"} _hover={{border:"1px solid #ADA9AD"}} value={firstName} onChange = {(e) => setFirstName(e.target.value)}/>
                 </FormControl>
               </Box>
               <Box>
                 <FormControl>
                   <FormLabel fontSize={"13px"} fontFamily="sans-serif" color="#4F3267" fontWeight={"semibold"}>Last Name</FormLabel>
-                  <Input id="lastName" type="text" border={"1px solid #ADA9AD"} _hover={{border:"1px solid #ADA9AD"}} value={lastName} onChange = {(e) => handleInputChange(e)} />
+                  <Input  type="text" border={"1px solid #ADA9AD"} _hover={{border:"1px solid #ADA9AD"}} value={lastName} onChange = {(e) => setLastName(e.target.value)} />
                 </FormControl>
               </Box>
             </HStack>
@@ -176,7 +178,7 @@ const SignIn = () => {
           <FormControl >
             <FormLabel fontSize={"13px"} fontFamily="sans-serif" color="#4F3267" fontWeight={"semibold"}>Password</FormLabel>
             <InputGroup>
-              <Input id="password" type={showPassword ? 'text' : 'password'} border={"1px solid #ADA9AD"} _hover={{border:"1px solid #ADA9AD"}}  value={password} onChange = {(e) => handleInputChange(e)}/>
+              <Input  type={showPassword ? 'text' : 'password'} border={"1px solid #ADA9AD"} _hover={{border:"1px solid #ADA9AD"}}  value={password} onChange = {(e) => setPassword(e.target.value)}/>
               <InputRightElement h={'full'}>
                 <Button
                   variant={'ghost'}
@@ -188,7 +190,7 @@ const SignIn = () => {
               </InputRightElement>
             </InputGroup>
           </FormControl>
-          <FormControl >
+          {/* <FormControl >
             <FormLabel fontSize={"13px"} fontFamily="sans-serif" color="#4F3267" fontWeight={"semibold"}  > Confrim Password</FormLabel>
             <InputGroup>
               <Input id="confirmPassword" type={showPassword ? 'text' : 'password'} border={"1px solid #ADA9AD"} _hover={{border:"1px solid #ADA9AD"}} value={confirmPassword} onChange = {(e) => handleInputChange(e)}/>
@@ -202,13 +204,13 @@ const SignIn = () => {
                 </Button>
               </InputRightElement>
             </InputGroup>
-          </FormControl>
+          </FormControl> */}
 
         <RadioGroup onChange={setValue} value={value}>
         <Stack direction='row'>
-          <Radio  value='1'> <Text fontSize={"13px"} fontFamily="sans-serif" > Male</Text></Radio>
-          <Radio value='2'><Text fontSize={"13px"} fontFamily="sans-serif" > Female</Text></Radio>
-          <Radio value='3'><Text fontSize={"13px"} fontFamily="sans-serif" >I don't want to specify</Text></Radio>
+          <Radio value='male'> <Text fontSize={"13px"} fontFamily="sans-serif" > Male</Text></Radio>
+          <Radio value='female'><Text fontSize={"13px"} fontFamily="sans-serif" > Female</Text></Radio>
+          <Radio value='other'><Text fontSize={"13px"} fontFamily="sans-serif" >I don't want to specify</Text></Radio>
         </Stack>
     </RadioGroup>
           <Stack spacing={10} pt={2}>
@@ -239,5 +241,21 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

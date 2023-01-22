@@ -1,0 +1,36 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "firstName": "",
+      "lastName": "",
+      "mobileNumber": "",
+      "email": "",
+      "password": " "
+    },
+    {
+      "firstName": "as",
+      "lastName": "ass",
+      "email": "a@mail.com",
+      "mobileNumber": "1321",
+      "password": "assss",
+      "id": 2
+    },
+    {
+      "firstName": "asdsa",
+      "lastName": "dsd",
+      "email": "asd",
+      "mobileNumber": "123",
+      "password": "sdsd",
+      "id": 3
+    },
+    {
+      "firstName": "wa",
+      "lastName": "aw",
+      "email": "aw@gmail.com",
+      "mobileNumber": "954540243",
+      "password": "123",
+      "id": 4
+    }
+  ]
+}
