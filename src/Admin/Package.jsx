@@ -9,7 +9,7 @@ import {
   Select,
   Text,
 } from "@chakra-ui/react";
-import { SiMessenger } from "react-icons/si";
+// import { SiMessenger } from "react-icons/si";
 import React, { useEffect, useState } from "react";
 import SidebarWithHeader from "./Sidebar";
 import MessengerButton from "./Button";

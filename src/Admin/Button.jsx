@@ -1,4 +1,4 @@
-import { SiMessenger } from 'react-icons/si';
+// import { SiMessenger } from 'react-icons/si';
 import { Button, Center, Text } from '@chakra-ui/react';
 
 export default function MessengerButton() {

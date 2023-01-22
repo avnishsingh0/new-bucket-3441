@@ -23,7 +23,7 @@ const Customers = () => {
     getJewlery();
   }, [1]);
   function getJewlery() {
-    fetch("http://localhost:8080/posts").then((result) => {
+    fetch("https://caratlane-database.vercel.app/products").then((result) => {
       result.json().then((resp) => {
         // console.log(resp);
         setCart(resp);
@@ -32,7 +32,7 @@ const Customers = () => {
   }
 
   function deleteItem(id) {
-    fetch(`http://localhost:8080/posts/${id}`, {
+    fetch(`https://caratlane-database.vercel.app/products/${id}`, {
       method: "DELETE",
     }).then((result) => {
       result.json().then((resp) => {

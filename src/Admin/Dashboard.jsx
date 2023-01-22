@@ -1,7 +1,7 @@
 import { Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import React from "react";
 import SidebarWithHeader from "./Sidebar";
-import { FiHome } from "react-icons/fi";
+// import { FiHome } from "react-icons/fi";
 import Chart from "react-apexcharts";
 const Blog = () => {
   return (
