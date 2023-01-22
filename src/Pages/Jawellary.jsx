@@ -1,9 +1,11 @@
 import { Box, Flex, Image, Spacer } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Footer from "../Components/Footer";
 import { Filter } from "../Components/Jewellery/Filter";
 import { Products } from "../Components/Jewellery/Products";
 import { Sortbybar } from "../Components/Jewellery/Sortbybar";
+import Navbar from "../Components/Navbar";
 import { getProducts } from "../Redux/AppReducer/product/action";
 
 export const Jawellary = () => {
@@ -54,6 +56,7 @@ export const Jawellary = () => {
 
   return (
     <>
+    <Navbar/>
       <Box>
         <Box>
           <Image src="https://cdn.caratlane.com/media/static/images/V4/2022/Shaya/12_Dec/19)12_2022/CL_x_Shaya_Banners/Desktop_Toplisting_1920x560.jpg" />
@@ -99,6 +102,7 @@ export const Jawellary = () => {
           </Box>
         </Flex>
       </Box>
+      <Footer/>
     </>
   );
 };
