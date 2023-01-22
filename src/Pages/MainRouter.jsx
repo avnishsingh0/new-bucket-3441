@@ -14,8 +14,8 @@ const MainRouter = () => {
     <Routes>
       <Route path="/" element={<Home />} />;
       <Route path="/signIn" element={<SignIn />} />;
-      <Route path="/cart" element={ <PrivteRoutes>  <Cart /></PrivteRoutes>} />;
-      <Route path="/checkout" element={ <PrivteRoutes> <Checkout /></PrivteRoutes>} />;
+      <Route path="/cart" element={ <PrivteRoutes> <Cart /> </PrivteRoutes>} />;
+      <Route path="/checkout" element={ <PrivteRoutes><Checkout /> </PrivteRoutes>} />;
       <Route path="/jawellary" element={<Jawellary />} />;
       <Route path="/login" element={<Login />} />;
       <Route path="/SingleProduct/:id" element={<SingleProduct />} />;
