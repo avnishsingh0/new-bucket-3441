@@ -3,10 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 export const SingleProdCard = ({ id, name, type, image1, image2, price }) => {
   const navigate = useNavigate();
-  const onclickhandler=()=>{
-    console.log(id);
-    // navigate("/:id");
-  }
+  const onclickhandler = () => {
+    navigate("/SingleProduct/:id");
+  };
 
   return (
     <>
