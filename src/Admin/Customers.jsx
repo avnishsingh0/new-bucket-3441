@@ -23,7 +23,7 @@ const Customers = () => {
     getJewlery();
   }, [1]);
   function getJewlery() {
-    fetch("http://localhost:8080/posts").then((result) => {
+    fetch("https://caratlane-database.vercel.app/products").then((result) => {
       result.json().then((resp) => {
         // console.log(resp);
         setCart(resp);
@@ -32,7 +32,7 @@ const Customers = () => {
   }
 
   function deleteItem(id) {
-    fetch(`http://localhost:8080/posts/${id}`, {
+    fetch(`https://caratlane-database.vercel.app/products/${id}`, {
       method: "DELETE",
     }).then((result) => {
       result.json().then((resp) => {
@@ -65,12 +65,12 @@ const Customers = () => {
                   <Img
                     w={50}
                     h={50}
-                    src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2F1_2d186f9b-9024-4e23-a0d2-a55b7671e89c.jpg%3Fv%3D1657123108&w=256&q=75"
+                    src={product.image1}
                   />
                 </Td>
                 <Td>{product.name}</Td>
-                <Td>25.4</Td>
-                <Td>25.4</Td>
+                <Td>{product.price}</Td>
+                <Td>4000</Td>
                 <Td>
                   <InitialFocus/>
                 </Td>

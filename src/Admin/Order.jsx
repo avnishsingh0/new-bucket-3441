@@ -1,4 +1,3 @@
-
 import SidebarWithHeader from './Sidebar'
 import {
   Box,
@@ -19,12 +18,11 @@ import React, { useEffect, useState } from "react";
 // import SidebarWithHeader from "./Sidebar";
 const Order = () => {
   const [cart, setCart] = useState([]);
-
   useEffect(() => {
     getJewlery();
   }, [1]);
   function getJewlery() {
-    fetch("http://localhost:8080/posts").then((result) => {
+    fetch("https://caratlane-database.vercel.app/customerData").then((result) => {
       result.json().then((resp) => {
         // console.log(resp);
         setCart(resp);
@@ -32,7 +30,7 @@ const Order = () => {
     });
   }
   function deleteItem(id) {
-    fetch(`http://localhost:8080/posts/${id}`, {
+    fetch(`https://caratlane-database.vercel.app/customerData/${id}`, {
       method: "DELETE",
     }).then((result) => {
       result.json().then((resp) => {
@@ -48,10 +46,11 @@ const Order = () => {
       <Table size="sm" ml={250} w={"80%"}>
         <Thead>
           <Tr>
-            <Th>Item Image</Th>
-            <Th>Item name</Th>
-            <Th>Payment</Th>
+            <Th>User Name</Th>
+            <Th>User Address</Th>
             <Th>Address</Th>
+            <Th>No of Item</Th>
+            
             <Th>Reject</Th>
           </Tr>
         </Thead>
@@ -60,15 +59,17 @@ const Order = () => {
           <Tbody key={index}>
             <Tr>
               <Td>
-                <Img
+              {product.fullName}
+                {/* <Img
                   w={50}
                   h={50}
-                  src="https://in.sugarcosmetics.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0906%2F2558%2Fproducts%2F1_2d186f9b-9024-4e23-a0d2-a55b7671e89c.jpg%3Fv%3D1657123108&w=256&q=75"
-                />
+                  src={product.image1}
+                /> */}
               </Td>
-              <Td>{product.name}</Td>
-              <Td>25.4</Td>
-              <Td>25.4</Td>
+              <Td>{product.address}</Td>
+              <Td>{product.city}</Td>
+              <Td>{product.numOfItems}</Td>
+              
               <Td>
                 <Button
                   bg="tomato"

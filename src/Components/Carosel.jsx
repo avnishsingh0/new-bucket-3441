@@ -30,6 +30,7 @@ export default function Carousel() {
 
   return (
     <Box 
+    
       position={'relative'}
       height={'600px'}
       width={{base:'100%' ,md:"full", lg:"full"}}

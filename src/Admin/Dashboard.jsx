@@ -3,7 +3,10 @@ import React from "react";
 import SidebarWithHeader from "./Sidebar";
 import { FiHome } from "react-icons/fi";
 import Chart from "react-apexcharts";
+import { useSelector } from "react-redux";
 const Blog = () => {
+  const  isLoadin  = useSelector((store) => store.AppReducer);
+  console.log(isLoadin);
   return (
     <Box>
       <SidebarWithHeader />
@@ -24,7 +27,7 @@ const Blog = () => {
             h={20}
             w={150}
           >
-            Packages <br />1{" "}
+            Packages <br />24{" "}
           </Box>
           <Box
             _hover={{
@@ -41,7 +44,7 @@ const Blog = () => {
             h={20}
             w={150}
           >
-            Customers <br />1
+            Customers <br />3
           </Box>
           <Box
             _hover={{
@@ -58,7 +61,7 @@ const Blog = () => {
             h={20}
             w={150}
           >
-            Gift Card <br />1
+            Gift Card <br />0
           </Box>
           <Box
             _hover={{
@@ -75,7 +78,7 @@ const Blog = () => {
             h={20}
             w={150}
           >
-            Income <br />1
+            Income <br />10000  
           </Box>
         </SimpleGrid>
       </Box>
@@ -85,7 +88,7 @@ const Blog = () => {
           type="pie"
           width={1100}
           height={350}
-          series={[20, 25, 36, 80]}
+          series={[24, 35, 0, 30]}
           options={{
             
             noData: { text: "Empty Data" },

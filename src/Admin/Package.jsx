@@ -16,8 +16,8 @@ import MessengerButton from "./Button";
 import Aos from "aos";
 const Package = () => {
   const [name, setName] = useState("");
-  const [product, setProduct] = useState("");
-  const [image, setImage] = useState("");
+  const [type, setType] = useState("");
+  const [image1, setImage] = useState("");
   const [price, setPrice] = useState("");
   const [originprice, setOprice] = useState("");
   const [catogery, setCatogery] = useState("");
@@ -27,9 +27,9 @@ const Package = () => {
 },[])
 
   function saveData() {
-    let data = { name, product, image,price,originprice,catogery };
+    let data = { name, image1, price,type,catogery };
     // console.warn(data);
-    fetch("http://localhost:8080/posts", {
+    fetch("https://caratlane-database.vercel.app/products", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -81,18 +81,10 @@ const Package = () => {
         />
         <br />
         <br />
-        <Input
-          placeholder="Enter Original price"
-          value={originprice}
-          onChange={(e) => {
-            setOprice(e.target.value);
-          }}
-        />
-        <br />
-        <br />
+        
         <Input
           placeholder="Enter image url"
-          value={image}
+          value={image1}
           onChange={(e) => {
             setImage(e.target.value);
           }}
@@ -100,7 +92,16 @@ const Package = () => {
         <br />
         <br />
         <Input
-          placeholder="Discount Price"
+          placeholder="Enter-type"
+          value={type}
+          onChange={(e) => {
+            setType(e.target.value);
+          }}
+        />
+        <br />
+        <br />
+        <Input
+          placeholder="Enter-Price"
           value={price}
           onChange={(e) => {
             setPrice(e.target.value);

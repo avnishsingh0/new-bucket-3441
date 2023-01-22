@@ -7,14 +7,11 @@ export const SingleProdCard = ({ id, name, type, image1, image2, price }) => {
     console.log(id);
     
   };
-
   const handleClick = () => {
     navigate(`/SingleProduct/${id}`);
   }
-
   return (
     <Box onClick={handleClick}>
-      
       <Box p="5">
         <Image
           src={image1}

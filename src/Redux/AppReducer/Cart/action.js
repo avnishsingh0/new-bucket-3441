@@ -44,7 +44,7 @@ export const getCartData = (dispatch) => {
   dispatch(getCartDataRequestAction());
 
   axios
-  .get("http://localhost:8080/cart")
+  .get("https://caratlane-database.vercel.app/cart")
   .then((res)=>{
     dispatch(getCartDataSuccessAction(res.data));
     dispatch(handleTotalAmount(res.data));
@@ -58,11 +58,11 @@ export const getCartData = (dispatch) => {
 
 
 export const handleQuantity = (id, price, quantity) => (dispatch) => {
-  axios.patch(`http://localhost:8080/cart/${id}`,{
+  axios.patch(`https://caratlane-database.vercel.app/cart/${id}`,{
     quantity : +quantity,
     totalPrice : (+price) * quantity
   }).then((res)=>{
-    axios.get(`http://localhost:8080/cart`).then((res)=>{
+    axios.get(`https://caratlane-database.vercel.app/cart`).then((res)=>{
       dispatch(getCartDataSuccessAction(res.data));
       dispatch(handleTotalAmount(res.data));
       dispatch(handleTotalItems(res.data));
@@ -71,8 +71,8 @@ export const handleQuantity = (id, price, quantity) => (dispatch) => {
 }
 
 export const handleRemove = (id) => (dispatch) => {
-  axios.delete(`http://localhost:8080/cart/${id}`).then((res)=>{
-    axios.get(`http://localhost:8080/cart`).then((res)=>{
+  axios.delete(`https://caratlane-database.vercel.app/cart/${id}`).then((res)=>{
+    axios.get(`https://caratlane-database.vercel.app/cart`).then((res)=>{
       dispatch(getCartDataSuccessAction(res.data));
       dispatch(handleTotalAmount(res.data));
       dispatch(handleTotalItems(res.data));

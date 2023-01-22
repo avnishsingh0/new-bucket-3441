@@ -42,7 +42,7 @@ export const getProducts = (payload) => (dispatch) => {
 };
 
 export const addToCart = (item) => (dispatch) => {
-  axios.post("http://localhost:8080/cart",item).then(()=>{
+  axios.post("https://caratlane-database.vercel.app/cart",item).then(()=>{
     dispatch(addToCartSuccess(item))
   })
 } 

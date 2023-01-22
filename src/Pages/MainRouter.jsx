@@ -8,7 +8,10 @@ import Login from "./Login";
 import SignIn from "./SignIn";
 import SingleProduct from "./SingleProduct";
 import { PrivteRoutes } from "../Components/PrivateRoutes";
-
+import Dashboard from "../Admin/Dashboard";
+import Order from "../Admin/Order";
+import Multistep from "../Admin/Package";
+import Customers from "../Admin/Customers";
 const MainRouter = () => {
   return (
     <Routes>
@@ -20,6 +23,11 @@ const MainRouter = () => {
       <Route path="/login" element={<Login />} />;
       <Route path="/SingleProduct/:id" element={<SingleProduct />} />;
       <Route path="*" element={<div>Page Not Found</div>} />
+
+      <Route path='/adminpanel' element={<Dashboard/>}/>
+      <Route path="/adminpanel/package" element={<Multistep/>}/>
+      <Route path="/adminpanel/customers" element={<Customers/>}/>
+      <Route path="/adminpanel/order" element={<Order/>}/>
     </Routes>
   );
 };

@@ -19,7 +19,7 @@ const Navbar = () => {
   
     return (
         <>
-        <Box  boxShadow={'lg'} p='2' bg={useColorModeValue('#1A365D', '#1A365D')} h={"20px"} position="fixed"></Box>
+        <Box  boxShadow={'lg'}  bg={useColorModeValue('#1A365D', '#1A365D')} h={"20px"} position="fixed"></Box>
             <Box  w={"100%"}  position="fixed" zIndex={"10"}    >
                 <Flex boxShadow='lg' p='2'h={16} alignItems={'center'} gap={"10px"}  bg={useColorModeValue('#F6F4ff', '#F6F4ff')}>
                     <IconButton bg={"#F6F4ff"} icon={isOpen ? <CloseIcon /> : <HamburgerIcon />} aria-label={'Open Menu'} display={{ md: 'none' }} onClick={isOpen ? onClose : onOpen} />

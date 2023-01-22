@@ -6,7 +6,7 @@ const addCustomerDataSuccess = () => {
 }
 
 export const addCustomerData = (item) => (dispatch) => {
-    axios.post("http://localhost:8080/customerData",item).then(()=>{
+    axios.post("https://caratlane-database.vercel.app/customerData",item).then(()=>{
         dispatch(addCustomerDataSuccess(item));
     })
 }

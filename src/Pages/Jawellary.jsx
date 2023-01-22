@@ -55,9 +55,9 @@ export const Jawellary = () => {
   }, []);
 
   return (
-    <>
-    <Navbar/>
-      <Box>
+    <Box>
+    <Box><Navbar/></Box>
+      <Box pt={"110px"}>
         <Box>
           <Image src="https://cdn.caratlane.com/media/static/images/V4/2022/Shaya/12_Dec/19)12_2022/CL_x_Shaya_Banners/Desktop_Toplisting_1920x560.jpg" />
           <Sortbybar sortby={sort} />
@@ -103,6 +103,6 @@ export const Jawellary = () => {
         </Flex>
       </Box>
       <Footer/>
-    </>
+    </Box>
   );
 };
