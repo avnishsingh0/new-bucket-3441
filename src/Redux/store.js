@@ -4,7 +4,7 @@ import {
   compose,
   legacy_createStore,
 } from "redux";
-import { reducer as AppReducer } from "./AppReducer/reducer";
+import { reducer as AppReducer } from "./AppReducer/product/reducer";
 import thunk from "redux-thunk";
 
 const composeEnhancers = window._REDUX_DEVTOOLS_EXTENTION_COMPOSE_ || compose;
