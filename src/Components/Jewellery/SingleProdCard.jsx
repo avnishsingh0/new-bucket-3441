@@ -5,12 +5,12 @@ export const SingleProdCard = ({ id, name, type, image1, image2, price }) => {
   const navigate = useNavigate();
   const onclickhandler = () => {
     console.log(id);
-    navigate("/SingleProduct/:id");
+    navigate(`/SingleProduct/${id}`);
   };
 
   return (
     <>
-      <Box p="5">
+      <Box p="5" onClick={onclickhandler}>
         <Image
           src={image1}
           alt={name}
