@@ -2,6 +2,7 @@ import {
   GET_PRODUCTS_FAILURE,
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_SUCCESS,
+  ADD_TO_CART_SUCCESS,
 } from "./actionTypes";
 import axios from "axios";
 
@@ -24,6 +25,10 @@ export const getProductsFailure = () => {
   };
 };
 
+const addToCartSuccess = () => {
+  return {type : ADD_TO_CART_SUCCESS}
+}
+
 export const getProducts = (payload) => (dispatch) => {
   dispatch(getProductsRequest());
   return axios
@@ -35,3 +40,9 @@ export const getProducts = (payload) => (dispatch) => {
       dispatch(getProductsFailure());
     });
 };
+
+export const addToCart = (item) => (dispatch) => {
+  axios.post("http://localhost:8080/cart",item).then(()=>{
+    dispatch(addToCartSuccess(item))
+  })
+} 

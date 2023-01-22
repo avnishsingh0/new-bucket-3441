@@ -5,11 +5,16 @@ export const SingleProdCard = ({ id, name, type, image1, image2, price }) => {
   const navigate = useNavigate();
   const onclickhandler = () => {
     console.log(id);
-    navigate("/SingleProduct/:id");
+    
   };
 
+  const handleClick = () => {
+    navigate(`/SingleProduct/${id}`);
+  }
+
   return (
-    <>
+    <Box onClick={handleClick}>
+      
       <Box p="5">
         <Image
           src={image1}
@@ -28,6 +33,6 @@ export const SingleProdCard = ({ id, name, type, image1, image2, price }) => {
           Book Try at Home
         </Button>
       </Box>
-    </>
+    </Box>
   );
 };

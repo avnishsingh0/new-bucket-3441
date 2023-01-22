@@ -225,6 +225,88 @@
       "mobileNumber": "954540243",
       "password": "123",
       "id": 4
+    },
+    {
+      "firstName": "pooja",
+      "lastName": "rathod",
+      "email": "Pooja@gmail.com",
+      "mobileNumber": "123456789",
+      "password": "0506",
+      "id": 5
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "name": "Moiz Pearl Drop Earrings",
+      "type": "Earrings",
+      "image1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07603-1YP6P0_1_lar.jpg",
+      "image2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07603-1YP6P0_7_lar.jpg",
+      "price": "38075",
+      "size": "5(44.5)",
+      "quantity": 1,
+      "totalPrice": 38075
+    }
+  ],
+  "customerData": [
+    {
+      "fullName": "Pooja Rathod",
+      "address": "Mumbai",
+      "city": "Mumbai",
+      "cardNumber": "123456677",
+      "expirationDate": "234",
+      "cvv": "123",
+      "orderAmount": 79917,
+      "numOfItems": 1,
+      "cartDetails": [
+        {
+          "id": 17,
+          "name": "Austere Cluster Diamond Bracelet",
+          "type": "Bracelets",
+          "image1": "https://cdn.caratlane.com/media/catalog/product/J/T/JT00361-YGP600_1_lar.jpg",
+          "image2": "https://cdn.caratlane.com/media/catalog/product/J/T/JT00361-YGP600_7_lar.jpg",
+          "price": "79917",
+          "size": "9(55.7)",
+          "quantity": 1,
+          "totalPrice": 79917
+        }
+      ],
+      "id": 1
+    },
+    {
+      "fullName": "Pooja Rathod",
+      "address": "Mumbai",
+      "city": "Mumbai",
+      "cardNumber": "11",
+      "expirationDate": "122",
+      "cvv": "11",
+      "orderAmount": 71812,
+      "numOfItems": 2,
+      "cartDetails": [
+        {
+          "id": 2,
+          "name": "Emma Flora Diamond Ring",
+          "type": "Rings",
+          "image1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03126-WGP900_1_lar.jpg",
+          "image2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03126-WGP900_7_lar.jpg",
+          "price": "64513",
+          "size": "5(44.5)",
+          "quantity": 1,
+          "totalPrice": 64513
+        },
+        {
+          "id": 1,
+          "name": "Moiz Pearl Drop Earrings",
+          "type": "Earrings",
+          "image1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07603-1YP6P0_1_lar.jpg",
+          "image2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07603-1YP6P0_7_lar.jpg",
+          "price": "38075",
+          "size": "5(44.5)",
+          "quantity": 1,
+          "totalPrice": 38075
+        }
+      ],
+      "id": 2
     }
   ]
 }

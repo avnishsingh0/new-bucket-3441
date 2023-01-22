@@ -227,7 +227,7 @@ const SignIn = () => {
           </Stack>
           <Stack  >
             <Text align={'center'} fontSize="12px" direction={"row"} >
-              Already have an account? <Link  to="/login" > <Text color="#DE57E5" >LOGIN</Text></Link>
+              Already have an account? <Link  to="/cart" > <Text color="#DE57E5" >LOGIN</Text></Link>
             </Text>
           </Stack>
         </Stack>
