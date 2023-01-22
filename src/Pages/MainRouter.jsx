@@ -22,16 +22,13 @@ const MainRouter = () => {
       <Route path="/cart" element={<Cart />} />;
       <Route path="/checkout" element={<Checkout />} />;
       <Route path="/jawellary" element={<Jawellary />} />;
-      <Route path="/login" element={<Login/>} />;
+      <Route path="/login" element={<Login />} />;
       <Route path="/SingleProduct/:id" element={<SingleProduct />} />;
       <Route path="*" element={<div>Page Not Found</div>} />
-
-      <Route path='/adminpanel' element={<Dashboard/>}/>
-      <Route path="/adminpanel/package" element={<Multistep/>}/>
-      <Route path="/adminpanel/customers" element={<Customers/>}/>
-      <Route path="/adminpanel/order" element={<Order/>}/>
-     
-      
+      <Route path="/adminpanel" element={<Dashboard />} />
+      <Route path="/adminpanel/package" element={<Multistep />} />
+      <Route path="/adminpanel/customers" element={<Customers />} />
+      <Route path="/adminpanel/order" element={<Order />} />
     </Routes>
   );
 };
