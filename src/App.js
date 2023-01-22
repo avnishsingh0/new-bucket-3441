@@ -1,15 +1,16 @@
-import "./App.css";
-import Navbar from "./Components/Navbar";
-import { Jawellary } from "./Pages/Jawellary";
-import MainRouter from "./Pages/MainRouter";
+import { Box } from '@chakra-ui/react';
+// import ANavbar from './Admin/ANavbar';
+import './App.css';
+import Navbar from './Components/Navbar';
+import MainRouter from './Pages/MainRouter';
 
 function App() {
   return (
-    <div className="App">
-      {/* <Navbar/>
-      <MainRouter/> */}
-      <Jawellary />
-    </div>
+    <Box className="App">
+      {/* <Navbar/> */}
+      <MainRouter/>
+      {/* <ANavbar/> */}
+    </Box>
   );
 }
 
