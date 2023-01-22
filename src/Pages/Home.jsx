@@ -8,7 +8,7 @@ import 'aos/dist/aos.css'
 import Aos from "aos";
 const Home = () => {
   useEffect(()=>{
-    Aos.init({duration:1000},{offset:200})
+    Aos.init({duration:1000},{offset:2000})
 },[])
   return (
     <Box>
