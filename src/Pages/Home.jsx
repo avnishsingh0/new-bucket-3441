@@ -6,12 +6,15 @@ import Hero from "../Components/Hero";
 import Statics from "../Components/Statics";
 import 'aos/dist/aos.css'
 import Aos from "aos";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 const Home = () => {
   useEffect(()=>{
     Aos.init({duration:1000},{offset:2000})
 },[])
   return (
     <Box>
+      <Navbar/>
       <Carousel />
       <Statics />
       <br />
@@ -67,6 +70,7 @@ const Home = () => {
         </SimpleGrid>
       </Box>
       <CallToActionWithVideo />
+      <Footer/>
     </Box>
   );
 };
