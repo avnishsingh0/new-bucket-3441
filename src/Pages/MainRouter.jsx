@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import AdminHome from "../Admin/AdminHome";
-import AdminRouter from "../Admin/AdminRouter";
+
 import Customers from "../Admin/Customers";
 import Dashboard from "../Admin/Dashboard";
 import Order from "../Admin/Order";
@@ -26,8 +25,6 @@ const MainRouter = () => {
       <Route path="/SingleProduct/:id" element={<SingleProduct />} />;
       <Route path="*" element={<div>Page Not Found</div>} />
       <Route path="/adminpanel" element={<Dashboard />} />
-
-      
       <Route path="/adminpanel/package" element={<Multistep />} />
       <Route path="/adminpanel/customers" element={<Customers />} />
       <Route path="/adminpanel/order" element={<Order />} />
