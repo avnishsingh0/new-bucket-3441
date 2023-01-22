@@ -48,6 +48,7 @@ const Customers = () => {
         <Table size="sm" ml={250} w={"80%"}>
           <Thead>
             <Tr>
+              <Th>Sl.No</Th>
               <Th>Item Image</Th>
               <Th>Item name</Th>
               <Th>Offer Price</Th>
@@ -56,10 +57,10 @@ const Customers = () => {
               <Th>Item Delete</Th>
             </Tr>
           </Thead>
-
           {cart.map((product, index) => (
-            <Tbody key={index}>
+            <Tbody key={index} >
               <Tr>
+              <Td fontWeight={'bold'}>{index+1}.</Td>
                 <Td>
                   <Img
                     w={50}

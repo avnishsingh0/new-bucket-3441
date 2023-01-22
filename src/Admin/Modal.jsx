@@ -18,17 +18,27 @@ export default function InitialFocus() {
         >
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Create your account</ModalHeader>
+            <ModalHeader>Add Your Products</ModalHeader>
             <ModalCloseButton />
             <ModalBody pb={6}>
               <FormControl>
-                <FormLabel>First name</FormLabel>
-                <Input ref={initialRef} placeholder='First name' />
+                <FormLabel>Product Name</FormLabel>
+                <Input ref={initialRef} placeholder='Name' />
               </FormControl>
   
               <FormControl mt={4}>
-                <FormLabel>Last name</FormLabel>
-                <Input placeholder='Last name' />
+                <FormLabel>Enter Original Price</FormLabel>
+                <Input placeholder='Price' />
+              </FormControl>
+
+              <FormControl mt={4}>
+                <FormLabel>Enter image url</FormLabel>
+                <Input placeholder='Image url' />
+              </FormControl>
+
+              <FormControl mt={4}>
+                <FormLabel>Discount Price</FormLabel>
+                <Input placeholder='Dis Price' />
               </FormControl>
             </ModalBody>
   

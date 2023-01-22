@@ -10,9 +10,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { SiMessenger } from "react-icons/si";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SidebarWithHeader from "./Sidebar";
 import MessengerButton from "./Button";
+import Aos from "aos";
 const Package = () => {
   const [name, setName] = useState("");
   const [product, setProduct] = useState("");
@@ -21,6 +22,9 @@ const Package = () => {
   const [originprice, setOprice] = useState("");
   const [catogery, setCatogery] = useState("");
 
+  useEffect(()=>{
+    Aos.init({duration:1500},{offset:200})
+},[])
 
   function saveData() {
     let data = { name, product, image,price,originprice,catogery };
@@ -51,6 +55,8 @@ const Package = () => {
         border={"2px solid cyan"}
         borderRadius={15}
         textAlign={"center"}
+        data-aos="fade-left"
+        
       >
         <label>ADD PRODUCT</label>
         <br />
