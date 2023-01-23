@@ -4,13 +4,12 @@ This is a collaborative Project from Masai School in the Construct Week develope
 
 
 
-1. Avnish Kumar :- https://github.com/Shubhamverma94 , https://www.linkedin.com/in/shubhamverma17/
+1. Avnish Kumar : -https://github.com/Adhamkazi
 
-2. Pooja Rathoor :- https://github.com/TejasBishnoi21  , https://www.linkedin.com/in/tejasvi-bishnoi-81294b14a/
+2. Pooja Rathoor :- https://github.com/PoojaRathod5  
+3. Nandan Kumar Singh :- https://github.com/nanksi 
 
-3. Nandan Kumar Singh :- https://github.com/avnishsingh0 , https://www.linkedin.com/in/avnish-kumar-a9347b239/
-
-4. Adham Kaji :- https://github.com/Devendra0192 , https://www.linkedin.com/in/devendrakumar9161/
+4. Adham Kaji :- https://github.com/Adhamkazi 
 
 💻Project Unique Name :- Infinty jwellars ✈️
 ---
