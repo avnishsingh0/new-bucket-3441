@@ -9,7 +9,7 @@ This is a collaborative Project from Masai School in the Construct Week develope
 2. Pooja Rathoor :- https://github.com/PoojaRathod5  
 3. Nandan Kumar Singh :- https://github.com/nanksi 
 
-4. Adham Kaji :- https://github.com/Adhamkazi 
+4. Adham Kazi :- https://github.com/Adhamkazi 
 
 💻Project Unique Name :- Infinty jwellars ✈️
 ---
