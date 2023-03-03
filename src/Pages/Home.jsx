@@ -4,21 +4,21 @@ import Carousel from "../Components/Carosel";
 import CallToActionWithVideo from "../Components/Des";
 import Hero from "../Components/Hero";
 import Statics from "../Components/Statics";
-import 'aos/dist/aos.css'
+import "aos/dist/aos.css";
 import Aos from "aos";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 const Home = () => {
-  useEffect(()=>{
-    Aos.init({duration:1000},{offset:2000})
-},[])
+  useEffect(() => {
+    Aos.init({ duration: 1000 }, { offset: 2000 });
+  }, []);
   return (
     <Box>
-      <Navbar/>
+      <Navbar />
       <Carousel />
       <Statics />
       <br />
-      <Hero/>
+      <Hero />
       <Box m={5} data-aos="fade-up">
         <SimpleGrid gap={5} columns={[1, 2, 2, 3]}>
           <Image
@@ -36,7 +36,7 @@ const Home = () => {
         </SimpleGrid>
       </Box>
 
-      <Box m={5}  data-aos="fade-up">
+      <Box m={5} data-aos="fade-up">
         <SimpleGrid gap={5} columns={[1, 2, 2, 2]}>
           <Image
             mt={4}
@@ -57,7 +57,7 @@ const Home = () => {
         </SimpleGrid>
       </Box>
 
-      <Box m={5}  data-aos="fade-up">
+      <Box m={5} data-aos="fade-up">
         <SimpleGrid gap={5} columns={[1, 2, 2, 2]}>
           <Image
             mt={4}
@@ -70,7 +70,7 @@ const Home = () => {
         </SimpleGrid>
       </Box>
       <CallToActionWithVideo />
-      <Footer/>
+      <Footer />
     </Box>
   );
 };

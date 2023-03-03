@@ -1,15 +1,15 @@
-import {
-  Box,
-  Center,
-  Checkbox,
-  Divider,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Center, Checkbox, Divider, Stack, Text } from "@chakra-ui/react";
 
 export const Filter = ({ onFilterChange, categories }) => {
   return (
-    <Box p={5} border="1px solid black" borderRadius={30} bgColor={"#f6f3f9"} position='sticky' top={'20%'}>
+    <Box
+      p={5}
+      border="1px solid black"
+      bgColor={"white"}
+      position="sticky"
+      top={"20%"}
+      zIndex={10}
+    >
       <Center h={"50px"} fontSize="lg">
         Filter By
       </Center>
@@ -29,7 +29,7 @@ export const Filter = ({ onFilterChange, categories }) => {
       </Stack>
       <Divider p={1} />
       <Stack
-        p={2}
+        p={0}
         direction={{
           base: "row",
           sm: "row",

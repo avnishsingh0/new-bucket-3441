@@ -17,17 +17,33 @@ const MainRouter = () => {
     <Routes>
       <Route path="/" element={<Home />} />;
       <Route path="/signIn" element={<SignIn />} />;
-      <Route path="/cart" element={ <PrivteRoutes> <Cart /> </PrivteRoutes>} />;
-      <Route path="/checkout" element={ <PrivteRoutes><Checkout /> </PrivteRoutes>} />;
+      <Route
+        path="/cart"
+        element={
+          <PrivteRoutes>
+            {" "}
+            <Cart />{" "}
+          </PrivteRoutes>
+        }
+      />
+      ;
+      <Route
+        path="/checkout"
+        element={
+          <PrivteRoutes>
+            <Checkout />{" "}
+          </PrivteRoutes>
+        }
+      />
+      ;
       <Route path="/jawellary" element={<Jawellary />} />;
       <Route path="/login" element={<Login />} />;
       <Route path="/SingleProduct/:id" element={<SingleProduct />} />;
       <Route path="*" element={<div>Page Not Found</div>} />
-
-      <Route path='/adminpanel' element={<Dashboard/>}/>
-      <Route path="/adminpanel/package" element={<Multistep/>}/>
-      <Route path="/adminpanel/customers" element={<Customers/>}/>
-      <Route path="/adminpanel/order" element={<Order/>}/>
+      <Route path="/adminpanel" element={<Dashboard />} />
+      <Route path="/adminpanel/package" element={<Multistep />} />
+      <Route path="/adminpanel/customers" element={<Customers />} />
+      <Route path="/adminpanel/order" element={<Order />} />
     </Routes>
   );
 };

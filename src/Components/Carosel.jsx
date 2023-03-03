@@ -1,9 +1,9 @@
-import React from 'react';
-import { Box, IconButton, useBreakpointValue } from '@chakra-ui/react';
+import React from "react";
+import { Box, IconButton, useBreakpointValue } from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
-import { ArrowBackIcon,ArrowForwardIcon } from '@chakra-ui/icons'
+import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 // And react-slick as our Carousel Lib
-import Slider from 'react-slick';
+import Slider from "react-slick";
 
 // Settings for the slider
 const settings = {
@@ -20,21 +20,21 @@ const settings = {
 
 export default function Carousel() {
   const [slider, setSlider] = React.useState(null);
-  const top = useBreakpointValue({ base: '80%', md: '50%' });
-  const side = useBreakpointValue({ base: '30%', md: '10px' });
+  const top = useBreakpointValue({ base: "80%", md: "50%" });
+  const side = useBreakpointValue({ base: "30%", md: "10px" });
   const cards = [
-    'https://cdn.caratlane.com/media/static/images/V4/2023/CL/01-JAN/AppBanner/Blaze/01/Desktop_1920x694.jpg',
-    'https://cdn.caratlane.com/media/static/images/V4/2022/Shaya/12_Dec/20_12_2022/Desktop/Desktop_1920x694_1.jpg',
-    'https://cdn.caratlane.com/media/static/images/V4/2022/CL/12-DEC/AppBanner/solitaireOffer/01/Desktop_1920x694.jpg',
+    "https://cdn.caratlane.com/media/static/images/V4/2023/CL/01-JAN/AppBanner/Blaze/01/Desktop_1920x694.jpg",
+    "https://cdn.caratlane.com/media/static/images/V4/2022/Shaya/12_Dec/20_12_2022/Desktop/Desktop_1920x694_1.jpg",
+    "https://cdn.caratlane.com/media/static/images/V4/2022/CL/12-DEC/AppBanner/solitaireOffer/01/Desktop_1920x694.jpg",
   ];
 
   return (
-    <Box 
-    
-      position={'relative'}
-      height={'600px'}
-      width={{base:'100%' ,md:"full", lg:"full"}}
-      overflow={'hidden'}>
+    <Box
+      position={"relative"}
+      height={"600px"}
+      width={{ base: "100%", md: "full", lg: "full" }}
+      overflow={"hidden"}
+    >
       <link
         rel="stylesheet"
         type="text/css"
@@ -53,9 +53,10 @@ export default function Carousel() {
         position="absolute"
         left={side}
         top={top}
-        transform={'translate(0%, -50%)'}
+        transform={"translate(0%, -50%)"}
         zIndex={2}
-        onClick={() => slider?.slickPrev()}>
+        onClick={() => slider?.slickPrev()}
+      >
         <ArrowForwardIcon />
       </IconButton>
       {/* Right Icon */}
@@ -66,9 +67,10 @@ export default function Carousel() {
         position="absolute"
         right={side}
         top={top}
-        transform={'translate(0%, -50%)'}
+        transform={"translate(0%, -50%)"}
         zIndex={2}
-        onClick={() => slider?.slickNext()}>
+        onClick={() => slider?.slickNext()}
+      >
         <ArrowBackIcon />
       </IconButton>
       {/* Slider */}
@@ -76,7 +78,7 @@ export default function Carousel() {
         {cards.map((url, index) => (
           <Box
             key={index}
-            height={'md'}
+            height={"md"}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"

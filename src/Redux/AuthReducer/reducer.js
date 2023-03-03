@@ -1,5 +1,5 @@
 // NOTE: DO NOT MODIFY the intial state structure in this file.
-import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE } from "./actionTypes"
+import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_ERROR } from "./actionTypes"
 
 const initialState = {
     isAuth: false,
@@ -24,6 +24,14 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state, isError: true, isLoading: false
             }
+
+        case LOGIN_REQUEST:
+            return { ...state, isLoading: true }
+
+        case LOGIN_SUCCESS:
+            return { ...state, isLoading: false, token: payload, isAuth: true }
+        case LOGIN_ERROR:
+            return { ...state, isLoading: false, isError: true }
 
         default:
             return state

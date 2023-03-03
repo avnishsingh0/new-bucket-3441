@@ -1,5 +1,5 @@
 //Write the ActionCreator functions here
-import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE } from "./actionTypes"
+import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_ERROR } from "./actionTypes"
 import axios from "axios"
 
 
@@ -16,3 +16,13 @@ const signup = (userObj) => async (dispatch) => {
 };
 export { signup }
 
+
+export const login = (userData) => (disptach) => {
+    disptach({ type: LOGIN_REQUEST })
+    return axios.get("http://localhost:8080/user", userData).then((res) => {
+        console.log(res.data)
+        disptach({ type: LOGIN_SUCCESS })
+    }).catch((err) => {
+        disptach({ LOGIN_ERROR })
+    })
+}
