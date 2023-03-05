@@ -19,6 +19,11 @@ export const Jawellary = () => {
     "Bracelets",
     "Mangalsutra",
   ];
+  const prices= [
+    'Under ₹50,000',
+    '₹50,000 - ₹1,00,000',
+    'Over ₹1,00,000'
+  ]
   const { products } = useSelector((store) => store.AppReducer);
   const [prodType, setProdType] = useState({
     filters: new Set(),
@@ -48,6 +53,28 @@ export const Jawellary = () => {
       };
     });
   };
+  const onFilterPrice= (e)=>{
+    setProdType((previousState) => {
+      let filters = new Set(previousState.filters);
+      let product = products;
+      if (e.target.checked) {
+        filters.add(e.target._wrapperState.initialValue);
+      } else {
+        filters.delete(e.target._wrapperState.initialValue);
+      }
+
+      if (filters.size) {
+        product = product.filter((product) => {
+          return filters.has(product.pv);
+        });
+      }
+
+      return {
+        filters,
+        product,
+      };
+    });
+  }
 
   useEffect(() => {
     dispatch(getProducts());
@@ -87,7 +114,7 @@ export const Jawellary = () => {
               lg: "20%",
             }}
           >
-            <Filter onFilterChange={onFilterChange} categories={categories} />
+            <Filter onFilterChange={onFilterChange} categories={categories} prices={prices} onFilterPrice={onFilterPrice} />
           </Box>
           <Spacer />
           <Box
