@@ -193,159 +193,74 @@
       "price": "36474"
     }
   ],
-  "user": [
+  "register": [
     {
-      "id": 1,
-      "firstName": "",
-      "lastName": "",
-      "mobileNumber": "",
-      "email": "",
-      "password": " "
+      "firstName": "adham",
+      "lastName": "kazi",
+      "email": "kazi@gmail.com",
+      "mobileNumber": "9545401057",
+      "password": "kazi",
+      "id": 1
     },
     {
-      "firstName": "as",
-      "lastName": "ass",
-      "email": "a@mail.com",
-      "mobileNumber": "1321",
-      "password": "assss",
+      "firstName": "aadham",
+      "lastName": "kaazi",
+      "email": "kazzi@gmail.com",
+      "mobileNumber": "22545401057",
+      "password": "qazi",
       "id": 2
     },
     {
-      "firstName": "asdsa",
-      "lastName": "dsd",
-      "email": "asd",
-      "mobileNumber": "123",
-      "password": "sdsd",
+      "firstName": "titu",
+      "lastName": "tuttu",
+      "email": "kazi@gmail.com",
+      "mobileNumber": "9545491957",
+      "password": "titu",
       "id": 3
     },
     {
-      "firstName": "wa",
-      "lastName": "aw",
-      "email": "aw@gmail.com",
-      "mobileNumber": "954540243",
-      "password": "123",
+      "firstName": "jk",
+      "lastName": "kj",
+      "email": "jk@gmail.com",
+      "mobileNumber": "123456",
+      "password": "jk",
       "id": 4
     },
     {
-      "firstName": "pooja",
-      "lastName": "rathod",
-      "email": "Pooja@gmail.com",
-      "mobileNumber": "123456789",
-      "password": "0506",
+      "firstName": "ms",
+      "lastName": "cit",
+      "email": "ms@gmail.com",
+      "mobileNumber": "9545401057",
+      "password": "cit",
       "id": 5
     },
     {
-      "firstName": "Avnish",
-      "lastName": "Kumar",
-      "email": "avnishavnishbdp@gmail.com",
-      "mobileNumber": "8340225267",
-      "password": "258258",
+      "firstName": "ms",
+      "lastName": "cit",
+      "email": "ms@gmail.com",
+      "mobileNumber": "9545401057",
+      "password": "cit",
       "id": 6
     },
     {
-      "firstName": "Av",
-      "lastName": "si",
-      "email": "avnishbdp@gmail.com",
-      "mobileNumber": "123456",
-      "password": "123456",
+      "firstName": "ad",
+      "lastName": "kc",
+      "email": "wk@gmail.com",
+      "mobileNumber": "0545",
+      "password": "wk",
       "id": 7
     },
     {
-      "firstName": "aa",
-      "lastName": "jjj",
-      "email": "avnishbdp@gmail.com",
-      "mobileNumber": "8340225267",
-      "password": "123456",
+      "firstName": "ad",
+      "lastName": "kc",
+      "email": "wk@gmail.com",
+      "mobileNumber": "0545",
+      "password": "wk",
       "id": 8
-    },
-    {
-      "firstName": "ssss",
-      "lastName": "545",
-      "email": "avnishbdp@gmail.com",
-      "mobileNumber": "83402252",
-      "password": "123466",
-      "id": 9
-    },
-    {
-      "firstName": "jbhb",
-      "lastName": "bhbhbh",
-      "email": "avnishbdp@gmail.com",
-      "mobileNumber": "12222",
-      "password": "123456",
-      "id": 10
-    },
-    {
-      "firstName": "ka",
-      "lastName": "a",
-      "email": "k@gmail.com",
-      "mobileNumber": "9545401057",
-      "password": "kazi",
-      "gender": "",
-      "id": 11
-    },
-    {
-      "firstName": "ka",
-      "lastName": "a",
-      "email": "k@gmail.com",
-      "mobileNumber": "9545401057",
-      "password": "kazi",
-      "gender": "",
-      "id": 12
-    },
-    {
-      "firstName": "jk",
-      "lastName": "j",
-      "email": "jk@gmail.com",
-      "mobileNumber": "9545401057",
-      "password": "jk",
-      "gender": "",
-      "id": 13
-    },
-    {
-      "firstName": "jk",
-      "lastName": "j",
-      "email": "jk@gmail.com",
-      "mobileNumber": "9545401057",
-      "password": "jk",
-      "gender": "",
-      "id": 14
-    },
-    {
-      "firstName": "kazi",
-      "lastName": "adham",
-      "email": "kazi@gmail.com",
-      "mobileNumber": "9545401057",
-      "password": "kazi",
-      "gender": "",
-      "id": 15
-    },
-    {
-      "firstName": "kazi",
-      "lastName": "adham",
-      "email": "kazi@gmail.com",
-      "mobileNumber": "9545401057",
-      "password": "kazi",
-      "gender": "",
-      "id": 16
-    },
-    {
-      "firstName": "a",
-      "lastName": "b",
-      "email": "a@gmail.com",
-      "mobileNumber": "124",
-      "password": "ac",
-      "gender": "",
-      "id": 17
-    },
-    {
-      "firstName": "a",
-      "lastName": "b",
-      "email": "a@gmail.com",
-      "mobileNumber": "124",
-      "password": "ac",
-      "gender": "",
-      "id": 18
     }
+  ],
+  "login": [
+    {}
   ],
   "cart": [
     {

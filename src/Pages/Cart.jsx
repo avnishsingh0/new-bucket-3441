@@ -13,16 +13,14 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Select,
-  Stack,
   Text,
   useDisclosure,
   VStack,
   Spacer,
-  Container,
   UnorderedList,
   ListItem,
   Input,
+  SimpleGrid,
 } from "@chakra-ui/react";
 
 import React, { useEffect, useState } from "react";
@@ -31,10 +29,11 @@ import { Link } from "react-router-dom";
 import {
   getCartData,
   handleCouponDiscount,
-  handleTotalAmount,
+  // handleTotalAmount,
 } from "../Redux/AppReducer/Cart/action";
 import SingleCartCard from "../Components/Cart/SingleCartCard";
 import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
 const Cart = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -56,7 +55,7 @@ const Cart = () => {
 
   return (
     <Box border="1px solid white" w="100%">
-      {/* navbar */}
+      <Navbar />
       <Flex w="100%" position="fixed" bg="white">
         <Flex
           boxShadow="rgba(0,0,0,0.24) 0px 3px 8px"
@@ -105,7 +104,7 @@ const Cart = () => {
 
       <Spacer></Spacer>
       {/* cart page data */}
-      <Box mt="5rem" h="auto" ml="10rem">
+      <SimpleGrid mt="150px" h="auto" ml="10rem">
         <Box backgroundColor="#F9F9FA" w="90%">
           <HStack spacing="24px" w="100%">
             <Flex w="70%" h="auto">
@@ -160,7 +159,8 @@ const Cart = () => {
                               lineHeight="1rem"
                               color="rgb(35, 21, 53)"
                             >
-                              ( 1 Point = 1 rupee ) <a>Know More</a>
+                              ( 1 Point = 1 rupee ){" "}
+                              <Text as="a">Know More</Text>
                             </Text>
                           </CardBody>
                         </Card>
@@ -348,7 +348,7 @@ const Cart = () => {
             ""
           )}
         </Box>
-      </Box>
+      </SimpleGrid>
       <br></br>
 
       <Footer></Footer>

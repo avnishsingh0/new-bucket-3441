@@ -17,7 +17,6 @@ export const Products = ({ prod }) => {
           }}
         >
           {prod.map((el) => {
-            // return <SingleProdCard key={el.id} {...el} />;
             return <SingleProdCard key={el.id} {...el} />;
           })}
         </Grid>

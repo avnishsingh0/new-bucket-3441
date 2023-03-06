@@ -1,5 +1,4 @@
 import { Box, Image, SimpleGrid } from "@chakra-ui/react";
-import { Grid, GridItem } from "@chakra-ui/react";
 import React from "react";
 
 const Statics = () => {

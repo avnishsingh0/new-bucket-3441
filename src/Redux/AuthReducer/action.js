@@ -1,28 +1,72 @@
-//Write the ActionCreator functions here
-import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_ERROR } from "./actionTypes"
-import axios from "axios"
-
-
-const signup = (userObj) => async (dispatch) => {
-    dispatch({ type: SIGNUP_REQUEST });
-    try {
-        const res = await axios.post("http://localhost:8080/user", userObj);
-        console.log(res.data);
-        dispatch({ type: SIGNUP_SUCCESS });
-    } catch (e) {
-        dispatch({ type: SIGNUP_FAILURE });
-        // console.log(e.res)
-    }
+import * as types from "./actionTypes";
+import axios from "axios";
+//-------------------------GET ACTION FUNCTIONS/OBJECTS-----------------------------------------------------
+const getUserLoginDataRequest = () => {
+  return {
+    type: types.GET_USER_LOGIN_DATA_REQUEST,
+  };
 };
-export { signup }
 
+const getUserLoginDataSuccess = (payload) => {
+  return {
+    type: types.GET_USER_LOGIN_DATA_SUCCESS,
+    payload,
+  };
+};
 
-export const login = (userData) => (disptach) => {
-    disptach({ type: LOGIN_REQUEST })
-    return axios.get("http://localhost:8080/user", userData).then((res) => {
-        console.log(res.data)
-        disptach({ type: LOGIN_SUCCESS })
-    }).catch((err) => {
-        disptach({ LOGIN_ERROR })
+const getUserLoginDataFailure = () => {
+  return {
+    type: types.GET_USER_LOGIN_DATA_FAILURE,
+  };
+};
+
+//--------------------------POST ACTION FUNCTIONS/OBJECTS---------------------------------
+
+const postUserLoginDataRequest = () => {
+  return {
+    type: types.POST_USER_LOGIN_DATA_REQUEST,
+  };
+};
+
+const postUserLoginDataSuccess = (payload) => {
+  return {
+    type: types.POST_USER_LOGIN_DATA_SUCCESS,
+    payload,
+  };
+};
+
+const postUserLoginDataFailure = () => {
+  return {
+    type: types.POST_USER_LOGIN_DATA_FAILURE,
+  };
+};
+
+//--------------------------------------------------------------
+
+export const getUserLoginDetails = (mobile) => (dispatch) => {
+  dispatch(getUserLoginDataRequest());
+
+  return axios
+    .get(`https://cartlane-users.onrender.com/Register?q=${mobile}`)
+    .then((res) => {
+      console.log(res.data[0], "from get request in action");
+      dispatch(getUserLoginDataSuccess(res.data));
     })
-}
+    .catch((err) => dispatch(getUserLoginDataFailure()));
+};
+
+export const postNewUserLoginDetails = (data) => (dispatch) => {
+  dispatch(postUserLoginDataRequest());
+
+  return axios
+    .post(`https://cartlane-users.onrender.com/Register`, data)
+    .then((res) => {
+      dispatch(postUserLoginDataSuccess(res.data));
+      console.log(res.data, "from action.jsx");
+    })
+    .catch((err) => dispatch(postUserLoginDataFailure()));
+};
+
+export const updateUserAuthStatus = (id, isAuth) => {
+  axios.patch(`https://cartlane-users.onrender.com/Register/${id}`, isAuth);
+};

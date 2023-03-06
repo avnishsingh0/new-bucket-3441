@@ -1,8 +1,6 @@
 import React from "react";
 import { Box, IconButton, useBreakpointValue } from "@chakra-ui/react";
-// Here we have used react-icons package for the icons
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-// And react-slick as our Carousel Lib
 import Slider from "react-slick";
 
 // Settings for the slider
@@ -59,7 +57,6 @@ export default function Carousel() {
       >
         <ArrowForwardIcon />
       </IconButton>
-      {/* Right Icon */}
       <IconButton
         aria-label="right-arrow"
         colorScheme="messenger"

@@ -1,43 +1,73 @@
-// NOTE: DO NOT MODIFY the intial state structure in this file.
-import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_ERROR } from "./actionTypes"
+import * as types from './actionTypes'
+import { initialState } from '../../Pages/LoginSignup'
 
-const initialState = {
-    isAuth: false,
-    token: [],
-    isLoading: false,
-    isError: false,
-};
+const reduxState = {
+  ...initialState,
+  users: [],
+}
 
-const reducer = (state = initialState, action) => {
-    const { type, payload } = action
-    switch (type) {
-        case SIGNUP_REQUEST:
-            return {
-                ...state, isLoading: true
-            }
+export const reducer = (oldState = reduxState, { type, payload }) => {
+  switch (type) {
+    //-------------------------------------------POST REQUESTS------------------------------------------------------------------------------------------
 
-        case SIGNUP_SUCCESS:
-            return {
-                ...state, isLoading: false, token: payload, isAuth: true,
-            }
-        case SIGNUP_FAILURE:
-            return {
-                ...state, isError: true, isLoading: false
-            }
+    case types.POST_USER_LOGIN_DATA_REQUEST:
+      return { ...oldState, isLoading: true }
 
-        case LOGIN_REQUEST:
-            return { ...state, isLoading: true }
+    case types.POST_USER_LOGIN_DATA_SUCCESS:
+      if (payload) {
+        localStorage.setItem('currentUser', JSON.stringify(payload))
 
-        case LOGIN_SUCCESS:
-            return { ...state, isLoading: false, token: payload, isAuth: true }
-        case LOGIN_ERROR:
-            return { ...state, isLoading: false, isError: true }
+      }
 
-        default:
-            return state
-    }
-};
+      return {
+        ...oldState,
+        isLoading: false,
+        firstName: payload.firstName,
+        lastName: payload.lastName,
+        mobile: payload.mobile,
+        email: payload.email,
+        password: payload.password,
+        confirmPassword: payload.confirmPassword,
+        otp: payload.otp,
+        isError: false,
+        users: [...oldState.users, payload],
+      }
 
-export { reducer };
+    // case types.POST_USER_LOGIN_DATA_SUCCESS: return {...oldState, users: [...users,payload], isAuth: true, isLoading: false}
 
+    case types.POST_USER_LOGIN_DATA_FAILURE:
+      return { ...oldState, isLoading: false, isError: true }
 
+    //-------------------------------------------GET REQUESTS------------------------------------------------------------------------------------------
+
+    case types.GET_USER_LOGIN_DATA_REQUEST:
+      return { ...oldState, isLoading: true }
+
+    case types.GET_USER_LOGIN_DATA_SUCCESS:
+      if (payload.length !== 0) {
+        localStorage.setItem('currentUser', JSON.stringify(payload[0]))
+        // userExist = JSON.parse(localStorage.getItem("currentUser"))
+      } else {
+        localStorage.removeItem('currentUser')
+        // userExist = JSON.parse(localStorage.getItem("currentUser"))
+      }
+      return {
+        ...oldState,
+        isLoading: false,
+        firstName: payload.firstName,
+        lastName: payload.lastName,
+        mobile: payload.mobile,
+        email: payload.email,
+        password: payload.password,
+        confirmPassword: payload.confirmPassword,
+        otp: payload.otp,
+        isError: false,
+      }
+
+    case types.GET_USER_LOGIN_DATA_FAILURE:
+      return { ...oldState, isLoading: false, isError: true }
+
+    default:
+      return { ...oldState }
+  }
+}

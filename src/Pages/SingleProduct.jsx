@@ -133,7 +133,7 @@ const SingleProduct = () => {
                 <Box h="200px">
                   <Box h="100">
                     <Flex>
-                      <Box h="100" w="272px">
+                      <Box h="100" w="272   px">
                         <Text mt="2rem" fontSize="2xl">
                           ₹{product.price}{" "}
                         </Text>

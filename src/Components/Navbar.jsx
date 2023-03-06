@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Text,
   Box,
@@ -12,10 +12,6 @@ import {
   useColorModeValue,
   Image,
   Stack,
-  Input,
-  //   FormControl,
-  InputGroup,
-  InputRightElement,
   Avatar,
   SimpleGrid,
   MenuList,
@@ -29,7 +25,7 @@ import {
   PopoverHeader,
   PopoverBody,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, SearchIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { AiOutlineGold, AiOutlineHome, AiFillHeart } from "react-icons/ai";
 import { IoStorefrontOutline } from "react-icons/io5";
 import { BsHandbag } from "react-icons/bs";
@@ -38,10 +34,62 @@ import { RiShoppingBasket2Line } from "react-icons/ri";
 import { BiHomeCircle } from "react-icons/bi";
 import { IoStorefrontSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { updateUserAuthStatus } from "../Redux/AuthReducer/action";
+import Search from "./Search";
+import { useCallback } from "react";
+import { countires } from "../Utils/Countries";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const [showLogin, setShowLogin] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
+
+  const [query, setQuery] = useState("");
+  console.log(query);
+  const [suggestions, setSuggestions] = useState([]);
+
+  let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  if (currentUser && currentUser.isAuth === true) {
+    if (showLogin === true) {
+      setShowLogin(false);
+    }
+    if (showMenu === false) {
+      setShowMenu(true);
+    }
+  }
+
+  const logout = () => {
+    console.log(currentUser.id, "currentUser.id");
+    updateUserAuthStatus(currentUser.id, { isAuth: false });
+    currentUser.isAuth = false;
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    if (showLogin === false) {
+      setShowLogin(true);
+    }
+    if (showMenu === true) {
+      setShowMenu(false);
+    }
+    //  localStorage
+  };
+
+  const queryHandler = useCallback((value) => {
+    setQuery(value);
+    console.log(value);
+  }, []);
+
+  useEffect(() => {
+    if (query === "") {
+      setSuggestions([]);
+    } else {
+      let textQuery = query.trim().toLowerCase();
+      let newSuggestions = countires.filter((item) => {
+        return item.name.toLowerCase().indexOf(textQuery) !== -1 ? true : false;
+      });
+      setSuggestions(newSuggestions);
+    }
+  }, [query]);
   return (
     <>
       <Box
@@ -66,12 +114,11 @@ const Navbar = () => {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack gap={"40px"} alignItems={"center"}>
+          <HStack gap={"20px"} alignItems={"center"}>
             <Box>
               <Link to="/">
-                {" "}
                 <Image
-                  w={{ base: "150px", md: "150px" }}
+                  w={{ md: "150px" }}
                   src={"/caratlane-logo.png"}
                   alt="log"
                 />
@@ -164,25 +211,7 @@ const Navbar = () => {
                 </Box>
               </Link>
               <Box className="input-box">
-                <InputGroup>
-                  <InputRightElement
-                    pointerEvents="none"
-                    bgGradient="linear(to-l, #7918CA, #FF0888)"
-                    children={<SearchIcon />}
-                  />
-                  <Input
-                    _focusVisible={{ border: "1px solid purple" }}
-                    border={"1px solid purple"}
-                    placeholder="search"
-                    _placeholder={{ color: "black" }}
-                    bg={"white"}
-                    rounded="none"
-                    w={{ md: "190px" }}
-                    fontSize={"11px"}
-                    color={"black"}
-                    type="text"
-                  />
-                </InputGroup>
+                <Search queryHandler={queryHandler} suggestions={suggestions} />
               </Box>
               <Popover>
                 <PopoverTrigger>
@@ -204,13 +233,20 @@ const Navbar = () => {
                       Your Account
                     </PopoverHeader>
                     <PopoverCloseButton />
-                    <PopoverBody
-                      fontFamily={"sans-serif"}
-                      fontSize={"13px"}
-                      textAlign="center"
-                    >
-                      Access acount & manage your orders
-                    </PopoverBody>
+                    {showMenu && (
+                      <PopoverBody
+                        fontFamily={"sans-serif"}
+                        fontSize={"13px"}
+                        textAlign="center"
+                      >
+                        <Text fontSize={"20px"}>
+                          Hii, {currentUser.firstName}{" "}
+                        </Text>
+
+                        <Text>Welecome to Cartlane</Text>
+                      </PopoverBody>
+                    )}
+
                     <PopoverBody
                       border="0"
                       display="flex"
@@ -218,15 +254,21 @@ const Navbar = () => {
                       justifyContent="space-around"
                       pb={4}
                     >
-                      <Link to="/signIn">
-                        {" "}
-                        <Button bg="#DE57E5">Signup</Button>
-                      </Link>
-                      <Link to="/login">
-                        <Button borderColor="#DE57E5" variant="outline">
-                          Login
-                        </Button>
-                      </Link>
+                      {!showLogin && (
+                        <Link to="/login">
+                          <Button onClick={logout} bg="#DE57E5">
+                            Logout
+                          </Button>
+                        </Link>
+                      )}
+
+                      {showLogin && (
+                        <Link to="/login">
+                          <Button borderColor="#DE57E5" variant="outline">
+                            Login
+                          </Button>
+                        </Link>
+                      )}
                     </PopoverBody>
                   </PopoverContent>
                 </Portal>
@@ -1136,68 +1178,74 @@ const Navbar = () => {
                 rounded="md"
                 bg="white"
               >
-                <Image
-                  src={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuwg-I_lEX4P9eGlHqt5-9h329hxYSmCziEg&usqp=CAU"
-                  }
-                />
-                <Text fontSize={{ base: "6px", sm: "11px" }}>Watch & Buy</Text>
+                <Link to="/jawellary">
+                  <Image
+                    src={
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuwg-I_lEX4P9eGlHqt5-9h329hxYSmCziEg&usqp=CAU"
+                    }
+                  />
+                  <Text fontSize={{ base: "6px", sm: "11px" }}>
+                    Watch & Buy
+                  </Text>
+                </Link>
               </Box>
 
               <Box w={"20%"} textAlign="center">
-                <Image
-                  src={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUbriW9R_7fom_UaZATiiwZkjgHj4Q8xXBkg&usqp=CAU"
-                  }
-                />
-                <Text fontSize={{ base: "6px", sm: "11px" }}>New Arriavls</Text>
+                <Link to="/jawellary">
+                  <Image
+                    src={
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUbriW9R_7fom_UaZATiiwZkjgHj4Q8xXBkg&usqp=CAU"
+                    }
+                  />
+                  <Text fontSize={{ base: "6px", sm: "11px" }}>
+                    New Arriavls
+                  </Text>
+                </Link>
               </Box>
 
               <Box w={"20%"} textAlign="center" bg="white">
-                <Image
-                  src={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG2IUBwIsgdvScWcNI5IRH2u77bqkIj_5tvA&usqp=CAU"
-                  }
-                />
-                <Text fontSize={{ base: "6px", sm: "11px" }}>
-                  Anniversary Gifts
-                </Text>
+                <Link to="/jawellary">
+                  <Image
+                    src={
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG2IUBwIsgdvScWcNI5IRH2u77bqkIj_5tvA&usqp=CAU"
+                    }
+                  />
+                  <Text fontSize={{ base: "6px", sm: "11px" }}>
+                    Anniversary Gifts
+                  </Text>
+                </Link>
               </Box>
 
               <Box w={"20%"} textAlign="center">
-                <Image
-                  src={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUwq5LQpLC-jhVKkecwlvxR6AYLHDjBbqnVQ&usqp=CAU"
-                  }
-                />
-                <Text fontSize={{ base: "6px", sm: "11px" }}>Solitairs</Text>
+                <Link to="/jawellary">
+                  <Image
+                    src={
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUwq5LQpLC-jhVKkecwlvxR6AYLHDjBbqnVQ&usqp=CAU"
+                    }
+                  />
+                  <Text fontSize={{ base: "6px", sm: "11px" }}>Solitairs</Text>
+                </Link>
+              </Box>
+              <Box w={"20%"} textAlign="center">
+                <Link to="/jawellary">
+                  <Image
+                    src={
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVoESKI0YAor-IFHLp9v5qhlNfMamTKtJUXg&usqp=CAU"
+                    }
+                  />
+                  <Text fontSize={{ base: "6px", sm: "11px" }}>Rings</Text>
+                </Link>
               </Box>
 
               <Box w={"20%"} textAlign="center">
-                <Image
-                  src={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVoESKI0YAor-IFHLp9v5qhlNfMamTKtJUXg&usqp=CAU"
-                  }
-                />
-                <Text fontSize={{ base: "6px", sm: "11px" }}>Rings</Text>
-              </Box>
-
-              <Box w={"20%"} textAlign="center">
-                <Image
-                  src={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUaIxUTGCcGPL5ePgz1sQyyEwVTNrIpMwi_A&usqp=CAU"
-                  }
-                />
-                <Text fontSize={{ base: "6px", sm: "11px" }}>Earrings</Text>
-              </Box>
-
-              <Box w={"20%"} textAlign="center">
-                <Image
-                  src={
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuwg-I_lEX4P9eGlHqt5-9h329hxYSmCziEg&usqp=CAU"
-                  }
-                />
-                <Text fontSize={{ base: "6px", sm: "11px" }}>Watch & Buy</Text>
+                <Link to="/jawellary">
+                  <Image
+                    src={
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUaIxUTGCcGPL5ePgz1sQyyEwVTNrIpMwi_A&usqp=CAU"
+                    }
+                  />
+                  <Text fontSize={{ base: "6px", sm: "11px" }}>Earrings</Text>
+                </Link>
               </Box>
             </Box>
           </>
