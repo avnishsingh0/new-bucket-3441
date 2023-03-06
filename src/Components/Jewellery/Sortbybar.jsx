@@ -42,7 +42,6 @@ export const Sortbybar = ({ sortby }) => {
             </Button>
           </Flex>
         </Box>
-
         <Flex w={"40%"} bgGradient="linear(to-r, #fcd5f5, #bfb3fe)">
           <Spacer />
           <Select

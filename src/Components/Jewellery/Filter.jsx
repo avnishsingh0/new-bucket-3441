@@ -1,6 +1,16 @@
-import { Box, Center, Checkbox, Divider, Stack, Text } from "@chakra-ui/react";
 
-export const Filter = ({ onFilterChange, categories }) => {
+import { Box, Center, Checkbox, Divider, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Checkbox,
+  Divider,
+  Radio,
+  RadioGroup,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+export const Filter = ({ onFilterChange, categories, onFilterPrice, prices }) => {
   return (
     <Box
       p={5}
@@ -23,9 +33,12 @@ export const Filter = ({ onFilterChange, categories }) => {
         }}
       >
         <Text as={"b"}>Price</Text>
-        <Checkbox>Under ₹50,000</Checkbox>
-        <Checkbox>₹50,000 - ₹1,00,000</Checkbox>
-        <Checkbox>Over ₹1,00,000</Checkbox>
+        {prices.map((price) => (
+          <label key={price}>
+            <input onChange={onFilterPrice} type="checkbox" value={price} />
+            {price}
+          </label>
+        ))}
       </Stack>
       <Divider p={1} />
       <Stack
