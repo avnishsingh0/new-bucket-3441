@@ -4,7 +4,7 @@ This is a collaborative Project from Masai School in the Construct Week develope
 
 
 
-1. Avnish Kumar : -https://github.com/Adhamkazi
+1. Avnish Kumar : -https://github.com/avnishsingh0 
 
 2. Pooja Rathoor :- https://github.com/PoojaRathod5  
 3. Nandan Kumar Singh :- https://github.com/nanksi 
@@ -37,9 +37,9 @@ Steps to run the project locally:-
 4. Enjoy! 
 
 ---
-Deployed Link : https://masai-jwellary.netlify.app/
+Deployed Link : https://new-bucket-3441-g1mee26kf-avnishsingh0-s-team.vercel.app/
 
-Project Presentation : https://drive.google.com/file/d/1ApSjdmJpv5J4WRk7N0l5rX0jccfM1ncq/view?usp=sharing
+Project Presentation : https://drive.google.com/file/d/15IGMkeC0I0bxlouCEo-gncIACUb1aXZ2/view
 
 ----
 <h1 align="center">✨Thank You✨</h1>
