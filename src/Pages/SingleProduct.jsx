@@ -92,7 +92,7 @@ const SingleProduct = () => {
                 <Box>
                   <SimpleGrid columns={2} spacingX="30px" spacingY="20px">
                     <Box height="80px">
-                      <p>Select Size</p>
+                      <Text>Select Size</Text>
                       <Select
                         value={size}
                         onChange={(e) => setSize(e.target.value)}
@@ -106,7 +106,7 @@ const SingleProduct = () => {
                       </Select>
                     </Box>
                     <Box height="80px">
-                      <p>Metal</p>
+                      <Text>Metal</Text>
                       <Select>
                         <option value="option1">14 KT White Gold</option>
                         <option value="option2">14 KT Yellow Gold</option>
@@ -116,7 +116,7 @@ const SingleProduct = () => {
                       </Select>
                     </Box>
                     <Box height="80px">
-                      <p>Diamond</p>
+                      <Text>Diamond</Text>
                       <Select>
                         <option value="option1">IJ-SI</option>
                         <option value="option2">GH-VS</option>
@@ -125,7 +125,7 @@ const SingleProduct = () => {
                       </Select>
                     </Box>
                     <Box height="80px">
-                      <p>Check Delivery & Trial Date</p>
+                      <Text>Check Delivery & Trial Date</Text>
                       <Input placeholder="PINCODE" size="md" />
                     </Box>
                   </SimpleGrid>
@@ -137,7 +137,7 @@ const SingleProduct = () => {
                         <Text mt="2rem" fontSize="2xl">
                           ₹{product.price}{" "}
                         </Text>
-                        <p>Offer Expire in 1 day</p>
+                        <Text>Offer Expire in 1 day</Text>
                       </Box>
 
                       <Box h="100" w="272px"></Box>

@@ -8,16 +8,12 @@ import {
   Image,
   Flex,
 } from "@chakra-ui/react";
-import { useRef } from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useThrottle } from "use-throttle";
 
 const Search = ({ queryHandler, suggestions }) => {
   const [input, setInput] = useState("");
-  console.log(input);
-  const [activeOption, setActiveOption] = useState(0);
-  const scrollDiv = useRef();
 
   const inputChangeHandler = (e) => {
     setInput(e.target.value);
@@ -62,14 +58,10 @@ const Search = ({ queryHandler, suggestions }) => {
           bg={"white"}
           zIndex="1"
           padding="10px"
-          suggestionsLength={suggestions.length}
-          active={activeOption}
-          ref={scrollDiv}
         >
           {suggestions.map((item, index) => {
-            console.log(suggestions.name);
             return (
-              <div key={index} onMouseOver={() => setActiveOption(index + 1)}>
+              <div key={index}>
                 <Link to="/jawellary">
                   <Flex>
                     <Text

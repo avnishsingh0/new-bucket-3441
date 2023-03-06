@@ -257,36 +257,36 @@ const Checkout = () => {
             <ModalBody>
               <HStack>
                 <Box>
-                  <p>Contact Details :</p>
-                  <p>
+                  <Text>Contact Details :</Text>
+                  <Text>
                     <Text as="b">{paymentDetails.fullName}</Text>
-                  </p>
-                  <p>
+                  </Text>
+                  <Text>
                     <Text as="cite">{paymentDetails.address}</Text>
-                  </p>
-                  <p>
+                  </Text>
+                  <Text>
                     <Text as="cite">{paymentDetails.city}</Text>
-                  </p>
+                  </Text>
                 </Box>
                 <Spacer></Spacer>
                 <Box>
-                  <p>Payment Details:</p>
-                  <p>
+                  <Text>Payment Details:</Text>
+                  <Text>
                     <Text>{paymentDetails.cardNumber}</Text>
-                  </p>
-                  <p>
+                  </Text>
+                  <Text>
                     <Text>{paymentDetails.expirationDate}</Text>
-                  </p>
-                  <p>
+                  </Text>
+                  <Text>
                     <Text>{paymentDetails.cvv}</Text>
-                  </p>
+                  </Text>
                 </Box>
               </HStack>
               <br></br>
-              <p>
+              <Text>
                 Congratulations your order with order id #201216 is successfully
                 placed
-              </p>
+              </Text>
             </ModalBody>
             <ModalFooter>
               <Link to="/">

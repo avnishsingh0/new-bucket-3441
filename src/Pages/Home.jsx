@@ -15,7 +15,9 @@ const Home = () => {
   return (
     <Box>
       <Navbar />
+      <Box h={"7.6rem"}></Box>
       <Carousel />
+
       <Statics />
       <br />
       <Hero />

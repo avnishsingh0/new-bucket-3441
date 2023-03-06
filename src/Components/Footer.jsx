@@ -214,7 +214,7 @@ export default function Footer() {
             <Text fontSize={"11px"} color="#87769D" lineHeight={"20px"}>
               General :{" "}
               <Text
-                as={"mail"}
+                // as={"mail"}
                 lineHeight={"20px"}
                 color="#DE57E5"
                 fontSize={"11px"}
@@ -227,7 +227,7 @@ export default function Footer() {
             <Text fontSize={"11px"} color="#87769D" lineHeight={"20px"}>
               Corporate :{" "}
               <Text
-                as={"mail"}
+                // as={"mail"}
                 lineHeight={"20px"}
                 color="#DE57E5"
                 fontSize={"11px"}
@@ -240,7 +240,7 @@ export default function Footer() {
             <Text fontSize={"11px"} color="#87769D" lineHeight={"20px"}>
               HR :{" "}
               <Text
-                as={"mail"}
+                // as={"mail"}
                 lineHeight={"20px"}
                 color="#DE57E5"
                 fontSize={"11px"}
@@ -253,7 +253,7 @@ export default function Footer() {
             <Text fontSize={"11px"} color="#87769D" lineHeight={"20px"}>
               Grievance :{" "}
               <Text
-                as={"mail"}
+                // as={"mail"}
                 lineHeight={"20px"}
                 color="#DE57E5"
                 fontSize={"11px"}

@@ -1,14 +1,8 @@
 
 import { Box, Center, Checkbox, Divider, Stack, Text } from "@chakra-ui/react";
 import {
-  Box,
-  Center,
-  Checkbox,
-  Divider,
   Radio,
   RadioGroup,
-  Stack,
-  Text,
 } from "@chakra-ui/react";
 export const Filter = ({ onFilterChange, categories, onFilterPrice, prices }) => {
   return (

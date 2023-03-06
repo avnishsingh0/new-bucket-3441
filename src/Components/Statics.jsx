@@ -3,7 +3,7 @@ import React from "react";
 
 const Statics = () => {
   return (
-    <Box m={5} mt={-20}>
+    <Box m={5} >
       <SimpleGrid columns={[1, 2, 2, 3]}>
         <Image
           mt={4}

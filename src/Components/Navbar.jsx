@@ -46,7 +46,6 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const [query, setQuery] = useState("");
-  console.log(query);
   const [suggestions, setSuggestions] = useState([]);
 
   let currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -61,7 +60,7 @@ const Navbar = () => {
   }
 
   const logout = () => {
-    console.log(currentUser.id, "currentUser.id");
+    // console.log(currentUser.id, "currentUser.id");
     updateUserAuthStatus(currentUser.id, { isAuth: false });
     currentUser.isAuth = false;
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
@@ -76,7 +75,7 @@ const Navbar = () => {
 
   const queryHandler = useCallback((value) => {
     setQuery(value);
-    console.log(value);
+    // console.log(value);
   }, []);
 
   useEffect(() => {
@@ -95,7 +94,6 @@ const Navbar = () => {
       <Box
         boxShadow={"lg"}
         bg={useColorModeValue("#1A365D", "#1A365D")}
-        h={"20px"}
         position="fixed"
       ></Box>
       <Box w={"100%"} position="fixed" zIndex={"10"}>
